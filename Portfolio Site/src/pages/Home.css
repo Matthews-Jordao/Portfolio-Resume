@@ -1,0 +1,10 @@
+/* Home page specific styles if needed */
+.home-page {
+  width: 100%;
+  position: relative;
+}
+
+.home-page > * {
+  position: relative;
+  z-index: 1;
+}
