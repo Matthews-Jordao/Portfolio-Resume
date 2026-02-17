@@ -27,16 +27,92 @@
   gap: 12px;
   margin: 0;
   padding: 12px 20px;
-  border: 2px solid #6b9eff;
   border-radius: 50px;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   position: relative;
   background: transparent;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  box-shadow: 0 8px 32px rgba(107, 158, 255, 0.1);
+  overflow: hidden;
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 2.2);
+  
+  /* Initial state: narrow width and hidden */
+  animation: navCircleExpand 2.0s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.2s forwards;
+  width: 60px;
+  white-space: nowrap;
+  opacity: 0;
+}
+
+/* Glass blur effect layer for nav-circle */
+.nav-circle::before {
+  content: '';
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  border-radius: 50px;
+  pointer-events: none;
+}
+
+/* Fallback for browsers that don't support backdrop-filter */
+@supports not (backdrop-filter: blur(3px)) {
+  .nav-circle::before {
+    background: rgba(255, 255, 255, 0.3);
+  }
+}
+
+/* White tint overlay for glass effect */
+.nav-circle::after {
+  content: '';
+  z-index: -1;
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.50);
+  border-radius: 50px;
+  pointer-events: none;
+  box-shadow: inset 2px 2px 1px 0 rgba(255, 255, 255, 0.5),
+    inset -1px -1px 1px 1px rgba(255, 255, 255, 0.5);
+}
+
+/* Nav circle expand animation */
+@keyframes navCircleExpand {
+  0% {
+    width: 60px;
+    opacity: 0;
+  }
+  55% {
+    width: 60px;
+    opacity: 1;
+  }
+  60% {
+    width: 60px;
+    opacity: 1;
+  }
+  85% {
+    width: 420px;
+    opacity: 1;
+  }
+  100% {
+    width: 408px;
+    opacity: 1;
+  }
+}
+
+/* Nav item pop-in animation */
+@keyframes navItemPopIn {
+  0% {
+    opacity: 0;
+    transform: scale(0) translateY(10px);
+  }
+  70% {
+    transform: scale(1.1) translateY(-2px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
 }
 
 .nav-circle li {
@@ -44,26 +120,33 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 1;
+  
+  /* Initial state: hidden and scaled down */
+  opacity: 0;
+  transform: scale(0) translateY(10px);
 }
 
-.nav-circle li:nth-child(1) {
-  transform: none;
-}
-
+/* Center items (About, Projects) appear together */
 .nav-circle li:nth-child(2) {
-  transform: none;
+  animation: navItemPopIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1.6s forwards;
 }
 
 .nav-circle li:nth-child(3) {
-  transform: none;
+  animation: navItemPopIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1.6s forwards;
+}
+
+/* Outer items (Home, Contact) appear together */
+.nav-circle li:nth-child(1) {
+  animation: navItemPopIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) 2.0s forwards;
 }
 
 .nav-circle li:nth-child(4) {
-  transform: none;
+  animation: navItemPopIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) 2.0s forwards;
 }
 
 .nav-circle a {
-  color: #e4e6eb;
+  color: var(--text-primary);
   text-decoration: none;
   font-size: 13px;
   font-weight: 700;
@@ -73,6 +156,8 @@
   border-radius: 20px;
   white-space: nowrap;
   text-transform: uppercase;
+  position: relative;
+  z-index: 2;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
 }
 

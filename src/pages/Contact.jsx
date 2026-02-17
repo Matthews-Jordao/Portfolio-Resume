@@ -30,7 +30,6 @@ export default function Contact() {
   const socialLinks = [
     { icon: 'Github', label: 'GitHub', url: '#' },
     { icon: 'Linkedin', label: 'LinkedIn', url: '#' },
-    { icon: 'Twitter', label: 'Twitter', url: '#' },
     { icon: 'Mail', label: 'Email', url: 'mailto:hello@example.com' }
   ]
 

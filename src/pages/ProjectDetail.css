@@ -1,6 +1,6 @@
 .project-detail {
   min-height: 100vh;
-  padding: 60px 20px;
+  padding: 150px 20px 60px 20px;
 }
 
 .detail-container {
@@ -28,12 +28,12 @@
 
 .not-found h1 {
   font-size: 48px;
-  color: #e4e6eb;
+  color: #1a2332;
   margin-bottom: 16px;
 }
 
 .not-found p {
-  color: #9ca3af;
+  color: #4a5568;
   font-size: 16px;
   margin-bottom: 32px;
 }
@@ -44,7 +44,7 @@
 
 .detail-header h1 {
   font-size: 48px;
-  color: #e4e6eb;
+  color: #1a2332;
   margin: 0 0 16px 0;
   line-height: 1.2;
 }
@@ -73,14 +73,14 @@
 
 .detail-section h2 {
   font-size: 28px;
-  color: #e4e6eb;
+  color: #1a2332;
   margin: 0 0 24px 0;
   padding-bottom: 12px;
-  border-bottom: 1px solid #2d3748;
+  border-bottom: 1px solid #e2e8f0;
 }
 
 .detail-section p {
-  color: #d1d5db;
+  color: #2d3748;
   font-size: 16px;
   line-height: 1.8;
   margin: 0;
@@ -93,7 +93,7 @@
 }
 
 .results-list li {
-  color: #d1d5db;
+  color: #2d3748;
   font-size: 16px;
   padding: 12px 0 12px 28px;
   position: relative;
@@ -117,7 +117,7 @@
   display: flex;
   gap: 12px;
   padding: 16px;
-  background-color: #1a2332;
+  background-color: #f7fafc;
   border-radius: 8px;
   border-left: 3px solid #6b9eff;
 }
@@ -129,7 +129,7 @@
 }
 
 .feature-item span:last-child {
-  color: #d1d5db;
+  color: #2d3748;
   font-size: 14px;
 }
 
@@ -147,7 +147,7 @@
 .tech-category h3 {
   font-size: 14px;
   font-weight: 600;
-  color: #d1d5db;
+  color: #4a5568;
   margin: 0;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -162,34 +162,35 @@
 .tech-badge {
   display: inline-block;
   padding: 8px 16px;
-  background-color: #1a2332;
-  color: #e4e6eb;
+  background-color: #f7fafc;
+  color: #2d3748;
   border-radius: 20px;
   font-size: 13px;
-  border: 1px solid #2d3748;
+  border: 1px solid #e2e8f0;
   transition: all 0.3s ease;
 }
 
 .tech-badge:hover {
   background-color: #6b9eff;
   border-color: #6b9eff;
-  color: #0f141f;
+  color: #ffffff;
 }
 
 .timeline {
-  color: #d1d5db;
+  color: #2d3748;
   font-size: 16px;
   margin: 0;
   padding: 16px;
-  background-color: #1a2332;
+  background-color: #f7fafc;
   border-radius: 8px;
   border-left: 3px solid #6b9eff;
 }
 
 .cta-section {
-  background-color: #1a2332;
+  background-color: #f7fafc;
   padding: 40px;
   border-radius: 12px;
+  border: 1px solid #e2e8f0;
 }
 
 .cta-section h2 {
@@ -225,24 +226,24 @@
 
 .github-button {
   background-color: transparent;
-  color: #e4e6eb;
+  color: #2d3748;
   border: 1px solid #6b9eff;
 }
 
 .github-button:hover {
   background-color: #6b9eff;
-  color: #0f141f;
+  color: #ffffff;
   transform: translateY(-2px);
 }
 
 .related-projects {
   padding-top: 60px;
-  border-top: 1px solid #2d3748;
+  border-top: 1px solid #e2e8f0;
 }
 
 .related-projects h2 {
   font-size: 28px;
-  color: #e4e6eb;
+  color: #1a2332;
   margin: 0 0 40px 0;
 }
 
@@ -258,9 +259,9 @@
   text-decoration: none;
   border-radius: 12px;
   overflow: hidden;
-  background-color: #1a2332;
+  background-color: #f7fafc;
   transition: all 0.3s ease;
-  border: 1px solid #2d3748;
+  border: 1px solid #e2e8f0;
 }
 
 .related-card:hover {
@@ -276,20 +277,20 @@
 
 .related-card h3 {
   font-size: 18px;
-  color: #e4e6eb;
+  color: #1a2332;
   margin: 16px 16px 8px 16px;
   line-height: 1.3;
 }
 
 .related-card p {
-  color: #9ca3af;
+  color: #4a5568;
   font-size: 13px;
   margin: 0 16px 16px 16px;
 }
 
 @media (max-width: 768px) {
   .project-detail {
-    padding: 40px 16px;
+    padding: 130px 16px 40px 16px;
   }
 
   .detail-header h1 {
@@ -325,7 +326,7 @@
 
 @media (max-width: 480px) {
   .project-detail {
-    padding: 30px 12px;
+    padding: 120px 12px 30px 12px;
   }
 
   .detail-header h1 {

@@ -2,207 +2,152 @@
    Footer
    ============================================ */
 .footer {
-  background-color: #0f141f;
-  border-top: 1px solid #2d3748;
-  padding: 80px 40px 40px;
+  background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+  border-top: 1px solid #e2e8f0;
+  padding: 60px 0 0;
   margin-top: 100px;
-  position: relative;
-  z-index: 1;
 }
 
 .footer-container {
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 0 40px;
 }
 
 .footer-content {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 40px;
-  gap: 80px;
+  align-items: center;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #e2e8f0;
 }
 
-.footer-logo p {
-  font-size: 36px;
+.footer-brand {
+  flex: 1;
+}
+
+.footer-logo {
+  font-size: 24px;
   font-weight: 700;
-  color: #e4e6eb;
+  color: #1a2332;
+  margin: 0 0 8px 0;
+  background: linear-gradient(135deg, #6b9eff 0%, #4f46e5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.footer-tagline {
+  font-size: 14px;
+  color: #4a5568;
   margin: 0;
-  line-height: 1.2;
+  font-weight: 400;
 }
 
 .footer-links {
   display: flex;
-  gap: 80px;
+  gap: 32px;
+  align-items: center;
 }
 
-.footer-column {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.footer-column h3 {
-  font-size: 12px;
-  font-weight: 600;
-  color: #d1d5db;
-  margin: 0;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.footer-column ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.footer-column a {
-  color: #9ca3af;
+.footer-links a {
+  color: #4a5568;
   text-decoration: none;
   font-size: 14px;
-  transition: color 0.3s ease;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  padding: 8px 0;
 }
 
-.footer-column a:hover {
-  color: #e4e6eb;
-  text-decoration: underline;
+.footer-links a:hover {
+  color: #6b9eff;
+}
+
+.footer-bottom {
+  padding: 20px 0;
+  text-align: center;
 }
 
 .footer-copyright {
-  border-top: 1px solid #2d3748;
-  padding-top: 30px;
-  text-align: center;
+  color: #718096;
+  font-size: 13px;
+  font-weight: 400;
   margin: 0;
-  color: #9ca3af;
-  font-size: 12px;
 }
 
 @media (max-width: 768px) {
   .footer {
-    padding: 50px 20px 30px;
+    padding: 50px 0 0;
     margin-top: 80px;
   }
 
-  .footer-content {
-    flex-direction: column;
-    gap: 40px;
-    margin-bottom: 30px;
-  }
-
-  .footer-links {
-    gap: 60px;
-  }
-
-  .footer-logo p {
-    font-size: 28px;
-  }
-}
-
-@media (max-width: 480px) {
-  .footer {
-    padding: 40px 15px 25px;
-    margin-top: 60px;
+  .footer-container {
+    padding: 0 20px;
   }
 
   .footer-content {
+    flex-direction: column;
     gap: 30px;
-    margin-bottom: 25px;
+    text-align: center;
+    padding-bottom: 30px;
+  }
+
+  .footer-logo {
+    font-size: 22px;
   }
 
   .footer-links {
-    flex-direction: column;
-    gap: 30px;
+    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
-  .footer-logo p {
-    font-size: 24px;
-  }
-
-  .footer-column h3 {
-    font-size: 11px;
-  }
-
-  .footer-column a {
+  .footer-links a {
     font-size: 13px;
+  }
+
+  .footer-bottom {
+    padding: 18px 0;
   }
 
   .footer-copyright {
-    padding-top: 25px;
-    font-size: 11px;
-  }
-}
-
-@media (max-width: 768px) {
-  .footer {
-    padding: 50px 20px 30px;
-    margin-top: 80px;
-  }
-
-  .footer-content {
-    flex-direction: column;
-    gap: 40px;
-  }
-
-  .footer-links-wrapper {
-    gap: 60px;
-  }
-
-  .logo-text {
-    font-size: 28px;
-  }
-
-  .footer-heading {
     font-size: 12px;
-  }
-
-  .footer-list a {
-    font-size: 13px;
   }
 }
 
 @media (max-width: 480px) {
   .footer {
-    padding: 40px 15px 25px;
+    padding: 40px 0 0;
     margin-top: 60px;
   }
 
   .footer-container {
-    gap: 30px;
+    padding: 0 15px;
   }
 
   .footer-content {
-    gap: 30px;
+    gap: 25px;
+    padding-bottom: 25px;
   }
 
-  .footer-links-wrapper {
-    gap: 40px;
+  .footer-logo {
+    font-size: 20px;
   }
 
-  .logo-text {
-    font-size: 24px;
+  .footer-links {
+    gap: 16px;
+    flex-direction: column;
   }
 
-  .footer-section {
-    gap: 12px;
-  }
-
-  .footer-list {
-    gap: 8px;
-  }
-
-  .footer-list a {
+  .footer-links a {
     font-size: 12px;
   }
 
-  .footer-copyright {
-    padding-top: 30px;
+  .footer-bottom {
+    padding: 15px 0;
   }
 
-  .footer-copyright p {
+  .footer-copyright {
     font-size: 11px;
   }
 }
