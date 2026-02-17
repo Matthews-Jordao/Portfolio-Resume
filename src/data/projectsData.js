@@ -2,6 +2,7 @@ export const projectsData = [
   {
     id: 1,
     slug: 'atendi-ai',
+    category: 'Personal',
     title: 'Atendi AI',
     description: 'Advanced AI voice receptionist system that intelligently handles incoming calls, manages messages, and automates appointment booking with natural language processing.',
     shortDescription: 'AI voice receptionist for calls & bookings',
@@ -37,6 +38,7 @@ export const projectsData = [
   {
     id: 2,
     slug: 'task-management-app',
+    category: 'Client',
     title: 'Task Management App',
     description: 'Collaborative task management application with real-time updates, team workspaces, and advanced filtering.',
     shortDescription: 'Team productivity and collaboration tool',
@@ -72,6 +74,7 @@ export const projectsData = [
   {
     id: 3,
     slug: 'weather-dashboard',
+    category: 'Personal',
     title: 'Weather Dashboard',
     description: 'Interactive weather dashboard with location-based forecasts, detailed analytics, and custom alerts.',
     shortDescription: 'Real-time weather information and forecasts',
@@ -107,6 +110,7 @@ export const projectsData = [
   {
     id: 4,
     slug: 'social-media-analytics',
+    category: 'Client',
     title: 'Social Media Analytics',
     description: 'Analytics dashboard for social media performance tracking with real-time data visualization.',
     shortDescription: 'Track social media metrics and insights',
@@ -141,6 +145,7 @@ export const projectsData = [
   {
     id: 5,
     slug: 'content-management-system',
+    category: 'Personal',
     title: 'Content Management System',
     description: 'Headless CMS with custom content modeling, version control, and multi-user collaboration features.',
     shortDescription: 'Flexible content management platform',
@@ -175,6 +180,7 @@ export const projectsData = [
   {
     id: 6,
     slug: 'portfolio-generator',
+    category: 'Personal',
     title: 'Portfolio Generator',
     description: 'Automated portfolio generator that creates stunning developer portfolios from GitHub profiles.',
     shortDescription: 'Generate portfolios from GitHub data',

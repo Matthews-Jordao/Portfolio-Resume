@@ -10,10 +10,13 @@
   padding: 100px 40px;
   background: transparent;
   min-height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .projects-wrapper {
-  max-width: 1200px;
+  width: var(--content-width, 850px);
   margin: 0 auto;
 }
 
@@ -42,13 +45,89 @@
   font-size: 16px;
   max-width: 600px;
   margin-top: 50px;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
   line-height: 1.8;
+}
+
+/* ============================================
+   Category Filters
+   ============================================ */
+.category-filters {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-bottom: 60px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.8);
+  color: #4a5568;
+  font-weight: 500;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.filter-btn:hover {
+  background: rgba(107, 158, 255, 0.1);
+  border-color: #6b9eff;
+  color: #6b9eff;
+  transform: translateY(-2px);
+}
+
+.filter-btn.active {
+  background: #6b9eff;
+  border-color: #6b9eff;
+  color: white;
+  box-shadow: 0 8px 25px rgba(107, 158, 255, 0.3);
+}
+
+.filter-count {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 2px 6px;
+  border-radius: 10px;
+  font-size: 12px;
+  min-width: 20px;
+  text-align: center;
+}
+
+.filter-btn.active .filter-count {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* ============================================
+   Project Category Tags
+   ============================================ */
+.project-category-tag {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  padding: 6px 12px;
+  background: rgba(107, 158, 255, 0.9);
+  color: white;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  z-index: 2;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(107, 158, 255, 0.3);
 }
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 350px));
+  justify-content: center;
   gap: 40px;
   margin-top: 0;
 }
@@ -67,18 +146,18 @@
 .project-card {
   display: flex;
   flex-direction: column;
+  width: 350px;
   border: 1px solid var(--border-color);
   border-radius: 16px;
   overflow: hidden;
   background: var(--bg-secondary);
   backdrop-filter: blur(10px);
   position: relative;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.15s ease-out, box-shadow 0.3s ease, border-color 0.3s ease;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1), 0 0 20px rgba(0, 0, 0, 0.05);
 }
 
 .project-card:hover {
-  transform: translateY(-12px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), 0 0 30px rgba(0, 0, 0, 0.1);
   border-color: var(--accent);
 }
@@ -247,9 +326,36 @@
     font-size: 36px;
   }
 
+  .category-filters {
+    gap: 12px;
+    margin-bottom: 40px;
+  }
+
+  .filter-btn {
+    padding: 10px 18px;
+    font-size: 13px;
+  }
+
+  .filter-count {
+    font-size: 11px;
+  }
+
+  .project-category-tag {
+    top: 12px;
+    right: 12px;
+    padding: 5px 10px;
+    font-size: 11px;
+  }
+
   .projects-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 265px));
+    justify-content: center;
     gap: 25px;
+  }
+
+  .project-card {
+    max-width: 265px;
+    width: 100%;
   }
 
   .project-image-container {
@@ -262,6 +368,11 @@
 
   .project-title {
     font-size: 18px;
+    margin-bottom: 0;
+  }
+
+  .project-tech-stack {
+    margin-bottom: 0;
   }
 
   .project-description {
@@ -305,8 +416,39 @@
     width: 40px;
   }
 
+  .category-filters {
+    gap: 8px;
+    margin-bottom: 30px;
+  }
+
+  .filter-btn {
+    padding: 8px 14px;
+    font-size: 12px;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .filter-count {
+    font-size: 10px;
+    padding: 1px 4px;
+  }
+
+  .project-category-tag {
+    top: 8px;
+    right: 8px;
+    padding: 4px 8px;
+    font-size: 10px;
+  }
+
   .projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 265px));
+    justify-content: center;
     gap: 20px;
+  }
+
+  .project-card {
+    max-width: 265px;
+    width: 100%;
   }
 
   .project-image-container {
@@ -314,12 +456,12 @@
   }
 
   .project-content {
-    padding: 16px;
+    padding: 10px 16px 16px 16px;
   }
 
   .project-title {
     font-size: 16px;
-    margin-bottom: 12px;
+    margin-bottom: 0;
   }
 
   .project-description {
@@ -333,7 +475,7 @@
 
   .project-tech-stack {
     gap: 8px;
-    margin-bottom: 12px;
+    margin-bottom: 0;
   }
 
   .overlay-btn {

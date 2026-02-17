@@ -10,7 +10,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 50px 20px 0 20px;
+  padding: 50px 20px 50px 20px;
 }
 
 .navbar {
@@ -169,7 +169,7 @@
 
 @media (max-width: 768px) {
   .header {
-    padding: 20px 15px 0 15px;
+    padding: 20px 15px 30px 15px;
   }
 
   .nav-circle {
@@ -185,7 +185,7 @@
 
 @media (max-width: 480px) {
   .header {
-    padding: 15px 10px 0 10px;
+    padding: 15px 10px 25px 10px;
   }
 
   .nav-circle {

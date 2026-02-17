@@ -2,19 +2,19 @@
    Hero Section
    ============================================ */
 .hero {
-  min-height: 65vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 75px 40px 0;
+  padding: 175px 40px 50px;
   background: white;
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
+  --content-width: 850px;
 }
 
 .hero-container {
-  width: auto;
+  width: var(--content-width, 850px);
   margin: 0 auto;
   display: grid;
   grid-template-columns: auto auto;
@@ -249,8 +249,8 @@
 /* Responsive Design */
 @media (max-width: 768px) {
   .hero {
-    min-height: 60vh;
-    padding: 100px 20px 20px;
+
+    padding: 100px 20px 40px;
   }
 
   .hero-container {

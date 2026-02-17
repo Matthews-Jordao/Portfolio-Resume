@@ -1,3 +1,4 @@
+import { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { projectsData } from '../data/projectsData'
 import './ProjectsPage.css'
@@ -14,6 +15,42 @@ const techStackIcons = {
 }
 
 export default function ProjectsPage() {
+  const [activeFilter, setActiveFilter] = useState('All')
+  const cardRefs = useRef([])
+
+  const categories = ['All', 'Personal', 'Client']
+
+  const filteredProjects = activeFilter === 'All' 
+    ? projectsData 
+    : projectsData.filter(project => project.category === activeFilter)
+
+  const handleMouseMove = (event, index) => {
+    const cardElement = cardRefs.current[index]
+    if (cardElement) {
+      const rect = cardElement.getBoundingClientRect()
+      const centerX = rect.left + rect.width / 2
+      const centerY = rect.top + rect.height / 2
+      
+      const mouseX = event.clientX
+      const mouseY = event.clientY
+      
+      // Calculate distance and direction from center
+      const deltaX = (mouseX - centerX) * 0.1  // More subtle movement
+      const deltaY = (mouseY - centerY) * 0.1
+      
+      // Apply transform
+      cardElement.style.transform = `translate(${deltaX}px, ${deltaY}px)`
+    }
+  }
+
+  const handleMouseLeave = (index) => {
+    // Reset card position
+    const cardElement = cardRefs.current[index]
+    if (cardElement) {
+      cardElement.style.transform = 'translate(0px, 0px)'
+    }
+  }
+
   return (
     <div className="projects-page">
       <section className="projects-section">
@@ -24,10 +61,30 @@ export default function ProjectsPage() {
             user experience, and continuous learning.
           </p>
 
+          <div className="category-filters">
+            {categories.map(category => (
+              <button
+                key={category}
+                className={`filter-btn ${activeFilter === category ? 'active' : ''}`}
+                onClick={() => setActiveFilter(category)}
+              >
+                {category}
+                <span className="filter-count">
+                  ({category === 'All' ? projectsData.length : projectsData.filter(p => p.category === category).length})
+                </span>
+              </button>
+            ))}
+          </div>
+
           <div className="projects-grid">
-            {projectsData.map(project => (
+            {filteredProjects.map((project, index) => (
               <Link key={project.id} to={`/projects/${project.slug}`} className="project-card-link">
-                <div className="project-card">
+                <div 
+                  ref={(el) => cardRefs.current[index] = el}
+                  className="project-card"
+                  onMouseMove={(e) => handleMouseMove(e, index)}
+                  onMouseLeave={() => handleMouseLeave(index)}
+                >
                   <div className="project-image-container">
                     <img src={project.image} alt={project.title} className="project-image" />
                     <div className="project-overlay">

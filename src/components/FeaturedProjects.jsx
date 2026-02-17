@@ -1,3 +1,4 @@
+import { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { projectsData } from '../data/projectsData'
 import './FeaturedProjects.css'
@@ -15,6 +16,34 @@ const techStackIcons = {
 
 export default function FeaturedProjects() {
   const featuredProjects = projectsData.filter(p => p.featured).slice(0, 2)
+  const cardRefs = useRef([])
+
+  const handleMouseMove = (event, index) => {
+    const cardElement = cardRefs.current[index]
+    if (cardElement) {
+      const rect = cardElement.getBoundingClientRect()
+      const centerX = rect.left + rect.width / 2
+      const centerY = rect.top + rect.height / 2
+      
+      const mouseX = event.clientX
+      const mouseY = event.clientY
+      
+      // Calculate distance and direction from center
+      const deltaX = (mouseX - centerX) * 0.1  // Subtle movement
+      const deltaY = (mouseY - centerY) * 0.1
+      
+      // Apply transform
+      cardElement.style.transform = `translate(${deltaX}px, ${deltaY}px)`
+    }
+  }
+
+  const handleMouseLeave = (index) => {
+    // Reset card position
+    const cardElement = cardRefs.current[index]
+    if (cardElement) {
+      cardElement.style.transform = 'translate(0px, 0px)'
+    }
+  }
 
   return (
     <section id="projects" className="featured-projects">
@@ -24,9 +53,14 @@ export default function FeaturedProjects() {
           <Link to="/projects" className="view-more-link">View More →</Link>
         </div>
         <div className="projects-grid">
-          {featuredProjects.map(project => (
+          {featuredProjects.map((project, index) => (
             <Link key={project.id} to={`/projects/${project.slug}`} className="project-card-link">
-              <div className="project-card">
+              <div 
+                ref={(el) => cardRefs.current[index] = el}
+                className="project-card"
+                onMouseMove={(e) => handleMouseMove(e, index)}
+                onMouseLeave={() => handleMouseLeave(index)}
+              >
                 <div className="project-image-container">
                   <img src={project.image} alt={project.title} className="project-image" />
                   <div className="project-overlay">
