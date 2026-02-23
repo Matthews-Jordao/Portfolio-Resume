@@ -66,7 +66,7 @@ export default function Experience() {
     <section className="experience">
       <div className="experience-container">
         <a 
-          href="/src/assets/Resumes/Matthews Jordao Resume 2025.pdf" 
+          href="src/assets/Resumes/Matthews Jordao Resume 2025.pdf" 
           target="_blank" 
           rel="noopener noreferrer" 
           className="resume-button"
