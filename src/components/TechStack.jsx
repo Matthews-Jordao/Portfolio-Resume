@@ -1,19 +1,27 @@
 import { useState, useRef } from 'react'
 import './TechStack.css'
+import jsIcon from '../assets/Teck Stack Img/js-svgrepo-com.svg'
+import reactIcon from '../assets/Teck Stack Img/react-svgrepo-com.svg'
+import nodeIcon from '../assets/Teck Stack Img/node-js-svgrepo-com.svg'
+import htmlIcon from '../assets/Teck Stack Img/html-5-svgrepo-com.svg'
+import cssIcon from '../assets/Teck Stack Img/css-3-svgrepo-com.svg'
+import githubIcon from '../assets/Teck Stack Img/github-color-svgrepo-com.svg'
+import viteIcon from '../assets/Teck Stack Img/vitejs-svgrepo-com.svg'
+import mongoIcon from '../assets/Teck Stack Img/mongo-svgrepo-com.svg'
 
 export default function TechStack() {
   const [tooltip, setTooltip] = useState({ visible: false, name: '', x: 0, y: 0 })
   const iconRefs = useRef([])
 
   const technologies = [
-    { name: 'JavaScript', icon: '/src/assets/Teck Stack Img/js-svgrepo-com.svg' },
-    { name: 'React', icon: '/src/assets/Teck Stack Img/react-svgrepo-com.svg' },
-    { name: 'Node.js', icon: '/src/assets/Teck Stack Img/node-js-svgrepo-com.svg' },
-    { name: 'HTML5', icon: '/src/assets/Teck Stack Img/html-5-svgrepo-com.svg' },
-    { name: 'CSS3', icon: '/src/assets/Teck Stack Img/css-3-svgrepo-com.svg' },
-    { name: 'GitHub', icon: '/src/assets/Teck Stack Img/github-color-svgrepo-com.svg' },
-    { name: 'Vite', icon: '/src/assets/Teck Stack Img/vitejs-svgrepo-com.svg' },
-    { name: 'MongoDB', icon: '/src/assets/Teck Stack Img/mongo-svgrepo-com.svg' },
+    { name: 'JavaScript', icon: jsIcon },
+    { name: 'React', icon: reactIcon },
+    { name: 'Node.js', icon: nodeIcon },
+    { name: 'HTML5', icon: htmlIcon },
+    { name: 'CSS3', icon: cssIcon },
+    { name: 'GitHub', icon: githubIcon },
+    { name: 'Vite', icon: viteIcon },
+    { name: 'MongoDB', icon: mongoIcon },
   ]
 
   const handleMouseEnter = (tech, event, index) => {

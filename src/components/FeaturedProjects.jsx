@@ -3,15 +3,24 @@ import { Link } from 'react-router-dom'
 import { projectsData } from '../data/projectsData'
 import './FeaturedProjects.css'
 
+import reactIcon from '../assets/Teck Stack Img/react-svgrepo-com.svg'
+import nodeIcon from '../assets/Teck Stack Img/node-js-svgrepo-com.svg'
+import mongoIcon from '../assets/Teck Stack Img/mongo-svgrepo-com.svg'
+import jsIcon from '../assets/Teck Stack Img/js-svgrepo-com.svg'
+import cssIcon from '../assets/Teck Stack Img/css-3-svgrepo-com.svg'
+import htmlIcon from '../assets/Teck Stack Img/html-5-svgrepo-com.svg'
+import viteIcon from '../assets/Teck Stack Img/vitejs-svgrepo-com.svg'
+import githubIcon from '../assets/Teck Stack Img/github-color-svgrepo-com.svg'
+
 const techStackIcons = {
-  'React': '/src/assets/Teck Stack Img/react-svgrepo-com.svg',
-  'Node.js': '/src/assets/Teck Stack Img/node-js-svgrepo-com.svg',
-  'MongoDB': '/src/assets/Teck Stack Img/mongo-svgrepo-com.svg',
-  'JavaScript': '/src/assets/Teck Stack Img/js-svgrepo-com.svg',
-  'CSS3': '/src/assets/Teck Stack Img/css-3-svgrepo-com.svg',
-  'HTML5': '/src/assets/Teck Stack Img/html-5-svgrepo-com.svg',
-  'Vite': '/src/assets/Teck Stack Img/vitejs-svgrepo-com.svg',
-  'GitHub': '/src/assets/Teck Stack Img/github-color-svgrepo-com.svg'
+  'React': reactIcon,
+  'Node.js': nodeIcon,
+  'MongoDB': mongoIcon,
+  'JavaScript': jsIcon,
+  'CSS3': cssIcon,
+  'HTML5': htmlIcon,
+  'Vite': viteIcon,
+  'GitHub': githubIcon
 }
 
 export default function FeaturedProjects() {

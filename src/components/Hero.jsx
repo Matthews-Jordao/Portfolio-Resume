@@ -1,6 +1,7 @@
 import './Hero.css'
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
+import profileImg from '../assets/Photo of me.png'
 
 export default function Hero() {
   const titles = [
@@ -61,7 +62,7 @@ export default function Hero() {
           
           {/* Mobile image - shows before subtitle on small screens */}
           <div className="hero-image-mobile">
-            <img src="/src/assets/Photo of me.png" alt="Matthews Jordao" className="profile-image" />
+            <img src={profileImg} alt="Matthews Jordao" className="profile-image" />
           </div>
 
           <p className="hero-subtitle">
@@ -90,7 +91,7 @@ export default function Hero() {
         
         {/* Desktop image - shows on the right side on larger screens */}
         <div className="hero-image">
-          <img src="/src/assets/Photo of me.png" alt="Matthews Jordao" className="profile-image" />
+          <img src={profileImg} alt="Matthews Jordao" className="profile-image" />
         </div>
       </div>
     </section>

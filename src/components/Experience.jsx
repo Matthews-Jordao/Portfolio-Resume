@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './Experience.css'
+import resumePdf from '../assets/Resumes/Matthews Jordao Resume 2025.pdf'
 
 export default function Experience() {
   const [activeTab, setActiveTab] = useState('work')
@@ -65,12 +66,13 @@ export default function Experience() {
   return (
     <section className="experience">
       <div className="experience-container">
-        <a 
-          href="src/assets/Resumes/Matthews Jordao Resume 2025.pdf" 
-          target="_blank" 
-          rel="noopener noreferrer" 
+        <a
+          href={resumePdf}
+          target="_blank"
+          rel="noopener noreferrer"
           className="resume-button"
           title="View Resume"
+          download
         >
           <svg viewBox="0 0 24 24" className="document-icon">
             <path fill="currentColor" d="M14,17H7V15H14M17,13H7V11H17M17,9H7V7H17M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3Z"/>
