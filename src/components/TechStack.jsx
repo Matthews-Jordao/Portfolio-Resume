@@ -1,13 +1,13 @@
 import { useState, useRef } from 'react'
 import './TechStack.css'
-import jsIcon from '../assets/Teck Stack Img/js-svgrepo-com.svg'
-import reactIcon from '../assets/Teck Stack Img/react-svgrepo-com.svg'
-import nodeIcon from '../assets/Teck Stack Img/node-js-svgrepo-com.svg'
-import htmlIcon from '../assets/Teck Stack Img/html-5-svgrepo-com.svg'
-import cssIcon from '../assets/Teck Stack Img/css-3-svgrepo-com.svg'
-import githubIcon from '../assets/Teck Stack Img/github-color-svgrepo-com.svg'
-import viteIcon from '../assets/Teck Stack Img/vitejs-svgrepo-com.svg'
-import mongoIcon from '../assets/Teck Stack Img/mongo-svgrepo-com.svg'
+import jsIcon from '../assets/icons/tech/js-svgrepo-com.svg'
+import reactIcon from '../assets/icons/tech/react-svgrepo-com.svg'
+import nodeIcon from '../assets/icons/tech/node-js-svgrepo-com.svg'
+import htmlIcon from '../assets/icons/tech/html-5-svgrepo-com.svg'
+import cssIcon from '../assets/icons/tech/css-3-svgrepo-com.svg'
+import githubIcon from '../assets/icons/tech/github-color-svgrepo-com.svg'
+import viteIcon from '../assets/icons/tech/vitejs-svgrepo-com.svg'
+import mongoIcon from '../assets/icons/tech/mongo-svgrepo-com.svg'
 
 export default function TechStack() {
   const [tooltip, setTooltip] = useState({ visible: false, name: '', x: 0, y: 0 })

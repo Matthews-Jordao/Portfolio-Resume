@@ -2,12 +2,14 @@ export const projectsData = [
   {
     id: 1,
     slug: 'atendi-ai',
+    type: 'web',
     category: 'Personal',
     title: 'Atendi AI',
-    description: 'Advanced AI voice receptionist system that intelligently handles incoming calls, manages messages, and automates appointment booking with natural language processing.',
     shortDescription: 'AI voice receptionist for calls & bookings',
+    description: 'Advanced AI voice receptionist system that intelligently handles incoming calls, manages messages, and automates appointment booking with natural language processing.',
     image: 'https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=500&h=300&fit=crop&auto=format',
     tags: ['JavaScript', 'Node.js', 'React', 'CSS3'],
+    label: 'Web App',
     featured: true,
     challenge: 'Businesses struggle with managing high volumes of calls, messages, and appointment scheduling, often leading to missed opportunities and poor customer experience during off-hours.',
     solution: 'Developed an intelligent AI voice receptionist using advanced natural language processing and speech recognition. The system seamlessly integrates with existing business workflows to handle customer interactions 24/7.',
@@ -15,16 +17,16 @@ export const projectsData = [
       'Reduced missed calls by 95%',
       'Automated 80% of appointment bookings',
       'Improved customer response time to under 30 seconds',
-      'Increased appointment conversion rate by 40%'
+      'Increased appointment conversion rate by 40%',
     ],
     technologies: {
       frontend: ['React', 'JavaScript', 'CSS3', 'Vite'],
       backend: ['Node.js', 'Express.js', 'WebRTC', 'Speech API'],
-      tools: ['Git', 'Twilio', 'Google Cloud']
+      tools: ['Git', 'Twilio', 'Google Cloud'],
     },
     liveLink: 'https://atendi-ai.com',
     githubLink: 'https://github.com/matthewsj/atendi-ai',
-    timeline: 'September 2024 - Present',
+    timeline: 'September 2024 – Present',
     features: [
       'Natural language call handling',
       'Smart message management',
@@ -32,185 +34,79 @@ export const projectsData = [
       'Multi-language support',
       'CRM integration',
       'Real-time analytics dashboard',
-      '24/7 availability'
-    ]
-  },
-  {
-    id: 2,
-    slug: 'task-management-app',
-    category: 'Client',
-    title: 'Task Management App',
-    description: 'Collaborative task management application with real-time updates, team workspaces, and advanced filtering.',
-    shortDescription: 'Team productivity and collaboration tool',
-    image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=500&h=300&fit=crop&auto=format',
-    tags: ['React', 'Firebase', 'Tailwind CSS'],
-    featured: true,
-    challenge: 'Create a real-time collaboration tool where multiple team members can work together seamlessly with instant updates and conflict resolution.',
-    solution: 'Used Firebase for real-time database and authentication, built a responsive React interface with Tailwind CSS, and implemented optimistic UI updates for smooth user experience.',
-    results: [
-      '50+ companies using the platform',
-      'Real-time sync across 5+ devices',
-      'User satisfaction: 4.8/5 stars',
-      'Reduced project management time by 30%'
+      '24/7 availability',
     ],
-    technologies: {
-      frontend: ['React', 'Tailwind CSS', 'React Query'],
-      backend: ['Firebase', 'Firestore'],
-      tools: ['Vercel', 'GitHub']
-    },
-    liveLink: 'https://example.com/tasks',
-    githubLink: 'https://github.com/example/task-app',
-    timeline: 'June 2024 - August 2024',
-    features: [
-      'Real-time task updates',
-      'Team workspaces',
-      'Advanced filtering and sorting',
-      'Comments and attachments',
-      'Due date reminders',
-      'Dark/Light theme',
-      'Mobile responsive'
-    ]
   },
   {
     id: 3,
-    slug: 'weather-dashboard',
+    slug: 'intake-lawyer',
+    type: 'web',
     category: 'Personal',
-    title: 'Weather Dashboard',
-    description: 'Interactive weather dashboard with location-based forecasts, detailed analytics, and custom alerts.',
-    shortDescription: 'Real-time weather information and forecasts',
-    image: 'https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=500&h=300&fit=crop&auto=format',
-    tags: ['React', 'API Integration', 'Chart.js'],
+    title: 'Intake Lawyer',
+    shortDescription: 'Full-stack intake CRM for personal injury law firms — lead management, in-app calling, email threading, e-signatures, and Stripe billing.',
+    description: 'A full-stack CRM built for personal injury law firms to manage their entire client intake pipeline — from first contact to signed client. Replaces spreadsheets and phone logs with a unified, real-time workspace covering lead management, in-app SMS, email, and voice calling, an embeddable intake chatbot, custom e-signature document collection, and Stripe subscription billing.',
+    image: 'https://images.unsplash.com/photo-1589829085413-56de8ae18c73?w=600&h=340&fit=crop&auto=format',
+    logoCard: true,
+    tags: ['React', 'Vite', 'Node.js', 'Express', 'Supabase', 'PostgreSQL', 'Twilio', 'Stripe', 'Vercel'],
+    label: 'Web App',
     featured: true,
-    challenge: 'Deliver accurate, up-to-date weather information with beautiful visualizations and useful forecast data without overwhelming users with information.',
-    solution: 'Integrated OpenWeather API for real-time data, used Chart.js for visualizations, and implemented smart caching to reduce API calls while maintaining accuracy.',
-    results: [
-      '100,000+ monthly active users',
-      'Average session duration: 8 minutes',
-      'Weather accuracy: 95%',
-      'Mobile app downloads: 50,000+'
+    liveLink: 'https://intakelawyer.com',
+    timeline: '2024 – Present',
+    figmaScreenshots: [
+      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=860&h=500&fit=crop&auto=format',
+      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=860&h=500&fit=crop&auto=format',
+      'https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?w=860&h=500&fit=crop&auto=format',
+      'https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=860&h=500&fit=crop&auto=format',
     ],
-    technologies: {
-      frontend: ['React', 'Chart.js', 'Mapbox'],
-      api: ['OpenWeather API', 'Geolocation API'],
-      tools: ['Vite', 'Vercel']
-    },
-    liveLink: 'https://example.com/weather',
-    githubLink: 'https://github.com/example/weather-dashboard',
-    timeline: 'April 2024 - June 2024',
-    features: [
-      'Current weather conditions',
-      '7-day forecast',
-      'Hourly breakdown',
-      'Weather alerts',
-      'Multiple location support',
-      'Historical data',
-      'Weather maps'
-    ]
+    photos: [
+      'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=860&h=500&fit=crop&auto=format',
+      'https://images.unsplash.com/photo-1521791055366-0d553872952f?w=860&h=500&fit=crop&auto=format',
+    ],
+  },
+  {
+    id: 2,
+    slug: 'its-gonna-be-okay',
+    type: 'video',
+    medium: 'short-film',
+    category: 'Personal',
+    title: "It's Gonna Be Okay",
+    shortDescription: 'Narrative short film exploring self-worth, resilience, and hope.',
+    description: `In 'It's Gonna Be Okay,' viewers are immersed in the tumultuous journey of Adam, a young soul navigating the shadows of high school hallways and the turmoil of a fractured home. Plagued by relentless bullying and grappling with inner demons, Adam's daily existence feels like an unending torment against his own self-worth. However, a fateful afternoon triggers an eerie out-of-body experience, thrusting him into a surreal realm where multiple versions of himself torment him mercilessly. Amidst this turmoil, a radiant door appears, offering a fleeting escape to a serene meadow — a respite from the pain that defines his reality. Yet, tranquility is short-lived as a haunting phone call propels Adam into another reality — a somber church where he confronts his own mortality amidst silent onlookers. Desperation ensues as he seeks solace in a reflection, ultimately finding a glimmer of hope in the whispered assurance, 'It's gonna be okay.'`,
+    image: 'https://img.youtube.com/vi/Q-tsOMSe3J8/maxresdefault.jpg',
+    videoId: 'Q-tsOMSe3J8',
+    videoUrl: 'https://youtu.be/Q-tsOMSe3J8',
+    duration: '11:36',
+    year: '2024',
+    role: 'Director / Writer',
+    tags: ['Short Film', 'Narrative', 'Senior Thesis'],
+    themes: ['Self-worth', 'Resilience', 'Hope', 'Mental health'],
+    featured: true,
+    shotGallery: [
+      'https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=900&h=506&fit=crop',
+      'https://images.unsplash.com/photo-1485846234645-a62644f84728?w=900&h=506&fit=crop',
+      'https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=900&h=506&fit=crop',
+      'https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?w=900&h=506&fit=crop',
+      'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=900&h=506&fit=crop',
+      'https://images.unsplash.com/photo-1516410529446-2c777cb7366d?w=900&h=506&fit=crop',
+    ],
   },
   {
     id: 4,
-    slug: 'social-media-analytics',
-    category: 'Client',
-    title: 'Social Media Analytics',
-    description: 'Analytics dashboard for social media performance tracking with real-time data visualization.',
-    shortDescription: 'Track social media metrics and insights',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=300&fit=crop&auto=format',
-    tags: ['React', 'Express.js', 'PostgreSQL', 'D3.js'],
-    featured: false,
-    challenge: 'Aggregate data from multiple social media platforms and present complex analytics in an intuitive, actionable dashboard.',
-    solution: 'Built a backend service that connects to multiple social media APIs, stores data in PostgreSQL, and visualizes it with D3.js for deep insights.',
-    results: [
-      '200+ businesses tracked',
-      'Data processing: 1M+ data points/day',
-      'Dashboard response time: <500ms',
-      'ROI improvement: 25% average'
-    ],
-    technologies: {
-      frontend: ['React', 'D3.js', 'Recharts'],
-      backend: ['Express.js', 'PostgreSQL', 'Node.js'],
-      api: ['Twitter API', 'Instagram API', 'Facebook API']
-    },
-    liveLink: 'https://example.com/analytics',
-    githubLink: 'https://github.com/example/social-analytics',
-    timeline: 'February 2024 - April 2024',
-    features: [
-      'Multi-platform integration',
-      'Real-time analytics',
-      'Custom dashboards',
-      'Report generation',
-      'Competitor analysis',
-      'Trend detection'
-    ]
-  },
-  {
-    id: 5,
-    slug: 'content-management-system',
+    slug: 'huskython',
+    type: 'video',
+    medium: 'commercial',
     category: 'Personal',
-    title: 'Content Management System',
-    description: 'Headless CMS with custom content modeling, version control, and multi-user collaboration features.',
-    shortDescription: 'Flexible content management platform',
-    image: 'https://images.unsplash.com/photo-1555421689-d68471e189f2?w=500&h=300&fit=crop&auto=format',
-    tags: ['Node.js', 'GraphQL', 'MongoDB'],
+    title: 'Huskython 2024',
+    shortDescription: 'Promotional film for UConn\'s 12-hour dance marathon benefiting Connecticut Children\'s Medical Center.',
+    description: 'Huskython is UConn\'s annual 12-hour dance marathon dedicated to raising money and awareness for Connecticut Children\'s Medical Center in Hartford — providing toys and supplies for children battling terminal illnesses. This promotional video was created to drive awareness for the 2024 event, centering the students who volunteer their time, energy, and passion to make it happen. The 2024 event raised $1,736,591.22.',
+    image: 'https://img.youtube.com/vi/B_hC0d6LwCI/maxresdefault.jpg',
+    videoId: 'B_hC0d6LwCI',
+    videoUrl: 'https://www.youtube.com/watch?v=B_hC0d6LwCI',
+    duration: '5:25',
+    year: '2024',
+    role: 'Director / Editor / Videographer',
+    tags: ['Promotional', 'Documentary', 'Non-Profit'],
+    themes: ['Community', 'Fundraising', 'Student Life', 'Awareness'],
     featured: false,
-    challenge: 'Build a flexible CMS that allows users to define custom content models, manage versions, and collaborate without being restricted to predefined schemas.',
-    solution: 'Created a GraphQL API with dynamic schema generation, implemented MongoDB for flexible storage, and added version control with conflict resolution.',
-    results: [
-      '30+ content types created',
-      '5 million+ content items managed',
-      'API queries: 1M+/month',
-      'Team collaboration: 10+ simultaneous users'
-    ],
-    technologies: {
-      backend: ['Node.js', 'GraphQL', 'MongoDB', 'Express.js'],
-      tools: ['Git', 'Docker', 'AWS Lambda']
-    },
-    liveLink: 'https://example.com/cms',
-    githubLink: 'https://github.com/example/cms',
-    timeline: 'December 2023 - February 2024',
-    features: [
-      'Custom content modeling',
-      'Version control',
-      'Revision history',
-      'User roles and permissions',
-      'GraphQL API',
-      'Content preview',
-      'Scheduled publishing'
-    ]
   },
-  {
-    id: 6,
-    slug: 'portfolio-generator',
-    category: 'Personal',
-    title: 'Portfolio Generator',
-    description: 'Automated portfolio generator that creates stunning developer portfolios from GitHub profiles.',
-    shortDescription: 'Generate portfolios from GitHub data',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=300&fit=crop&auto=format',
-    tags: ['React', 'GitHub API', 'Vite'],
-    featured: false,
-    challenge: 'Automate portfolio creation by analyzing GitHub profiles, extracting project data, and generating beautiful, professional portfolios.',
-    solution: 'Integrated GitHub API for data extraction, created template system with multiple designs, and automated the portfolio generation and deployment process.',
-    results: [
-      '5,000+ portfolios generated',
-      'Generation time: <30 seconds',
-      'Template variety: 8 designs',
-      'User satisfaction: 4.7/5 stars'
-    ],
-    technologies: {
-      frontend: ['React', 'Vite', 'Tailwind CSS'],
-      api: ['GitHub API', 'Vercel API'],
-      tools: ['Vercel', 'GitHub Pages']
-    },
-    liveLink: 'https://example.com/portfolio-gen',
-    githubLink: 'https://github.com/example/portfolio-gen',
-    timeline: 'October 2023 - December 2023',
-    features: [
-      'GitHub profile scanning',
-      'Automatic project detection',
-      'Multiple templates',
-      'Customization options',
-      'One-click deployment',
-      'SEO optimization',
-      'Analytics tracking'
-    ]
-  }
 ]

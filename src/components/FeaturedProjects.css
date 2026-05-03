@@ -254,6 +254,22 @@
     height: 200px;
   }
 
+  /* Make overlay buttons accessible on touch devices */
+  .project-image-container .project-overlay {
+    opacity: 1;
+    visibility: visible;
+    background: linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0.15));
+    align-items: flex-end;
+    justify-content: center;
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .project-image-container .project-image {
+    filter: none;
+    transform: none;
+  }
+
   .project-content {
     padding: 20px;
   }
@@ -297,6 +313,28 @@
 
   .project-image-container {
     height: 180px;
+  }
+
+  /* Stack cards fully and give better spacing on very small screens */
+  .project-card {
+    border-radius: 12px;
+  }
+
+  .project-image-container .project-overlay {
+    opacity: 1;
+    visibility: visible;
+    background: linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0.2));
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    gap: 8px;
+  }
+
+  /* Increase tap targets for buttons */
+  .overlay-btn {
+    padding: 10px 14px;
+    font-size: 13px;
+    border-radius: 10px;
   }
 
   .project-content {

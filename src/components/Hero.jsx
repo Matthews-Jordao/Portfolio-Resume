@@ -1,7 +1,7 @@
 import './Hero.css'
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
-import profileImg from '../assets/Photo of me.png'
+import profileImg from '../assets/profile/Photo of me.png'
 
 export default function Hero() {
   const titles = [
