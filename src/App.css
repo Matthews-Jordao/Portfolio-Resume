@@ -2,19 +2,88 @@
    Root Variables & Global Styles
    ============================================ */
 :root {
+  /* Core backgrounds */
   --bg-primary: #ffffff;
   --bg-secondary: #f8f9fa;
-  --bg-tertiary: #f1f3f4;
-  --text-primary: #212529;
+  --bg-card: #F5F5F3;
+
+  /* Text hierarchy */
+  --text-primary: #1A1A1A;
+  --text-body: #444;
+  --text-muted: #666;
+  --text-faint: #999;
   --text-secondary: #6c757d;
+  --text-placeholder: #9ca3af;
+
+  /* Separators / Borders */
+  --separator: #EBEBEB;
+  --border-color: #dee2e6;
+  --border-input: #d1d5db;
+
+  /* Accent */
   --accent: #6b9eff;
   --accent-hover: #5a8eef;
-  --border-color: #dee2e6;
-  
+
+  /* Nav glass */
+  --nav-glass: rgba(255, 255, 255, 0.50);
+  --nav-glass-fallback: rgba(255, 255, 255, 0.3);
+
+  /* Footer */
+  --footer-bg-start: #f7fafc;
+  --footer-bg-end: #edf2f7;
+  --footer-border: #e2e8f0;
+  --footer-text: #4a5568;
+  --footer-copyright: #718096;
+
+  /* Cards / Forms */
+  --card-bg: rgba(255, 255, 255, 0.95);
+  --input-bg: #ffffff;
+
+  /* Misc */
+  --badge-bg: #F0EFEA;
+  --badge-color: #555;
+  --faint-accent: #CCC;
+
   --font-mono: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
   --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
-  
+
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-theme="dark"] {
+  --bg-primary: #111111;
+  --bg-secondary: #161616;
+  --bg-card: #1C1C1C;
+
+  --text-primary: #EFEFEF;
+  --text-body: #C0C0C0;
+  --text-muted: #888888;
+  --text-faint: #606060;
+  --text-secondary: #888888;
+  --text-placeholder: #484848;
+
+  --separator: #2A2A2A;
+  --border-color: #2A2A2A;
+  --border-input: #333333;
+
+  --accent: #6b9eff;
+  --accent-hover: #5a8eef;
+
+  --nav-glass: rgba(18, 18, 18, 0.85);
+  --nav-glass-fallback: rgba(18, 18, 18, 0.9);
+
+  --footer-bg-start: #0E0E0E;
+  --footer-bg-end: #141414;
+  --footer-border: #2A2A2A;
+  --footer-text: #777777;
+  --footer-copyright: #555555;
+
+  --card-bg: rgba(28, 28, 28, 0.98);
+  --input-bg: #1C1C1C;
+
+  --badge-bg: #252525;
+  --badge-color: #AAAAAA;
+  --faint-accent: #3A3A3A;
 }
 
 * {
@@ -26,6 +95,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 120px;
+  background-color: var(--bg-primary);
 }
 
 body {
@@ -34,30 +104,78 @@ body {
   color: var(--text-primary);
   line-height: 1.6;
   font-size: 16px;
-  overflow-x: hidden;
+  overflow-x: clip;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ── Iris Wipe Transition (main content only) ─── */
+
+main.iris-out {
+  animation: irisClose 580ms cubic-bezier(0.65, 0, 0.35, 1) forwards;
+  pointer-events: none;
+}
+
+main.iris-in {
+  animation: irisOpen 620ms cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+
+@keyframes irisClose {
+  from { clip-path: circle(150% at 50% 42%); }
+  to   { clip-path: circle(0%   at 50% 42%); }
+}
+
+@keyframes irisOpen {
+  from { clip-path: circle(0%   at 50% 42%); }
+  to   { clip-path: circle(150% at 50% 42%); }
 }
 
 main {
   width: 100%;
 }
 
-.page-transition {
-  animation: pageSlideIn 0.38s cubic-bezier(0.16, 1, 0.3, 1) both;
+
+/* ── Dark Mode Toggle ─────────────────────────── */
+
+.theme-toggle {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  z-index: 1100;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--separator);
+  background: var(--bg-card);
+  color: var(--text-primary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  padding: 0;
+  flex-shrink: 0;
 }
 
-@keyframes pageSlideIn {
-  from {
-    opacity: 0;
-    transform: translateX(22px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+.theme-toggle:hover {
+  opacity: 0.75;
+}
+
+.theme-toggle svg {
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
 }
 
 @media (max-width: 480px) {
   html {
     scroll-padding-top: 70px;
+  }
+
+  .theme-toggle {
+    top: 16px;
+    right: 16px;
+    width: 36px;
+    height: 36px;
   }
 }

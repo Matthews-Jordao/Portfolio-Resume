@@ -6,6 +6,7 @@ import filmStill1 from '../assets/projects/its-gonna-be-okay/vlcsnap-2024-03-06-
 import filmStill2 from '../assets/projects/its-gonna-be-okay/vlcsnap-2024-03-06-17h13m13s875.png'
 import filmStill3 from '../assets/projects/its-gonna-be-okay/vlcsnap-2024-03-06-17h13m55s434.png'
 import filmStill4 from '../assets/projects/its-gonna-be-okay/vlcsnap-2024-03-06-17h14m17s622.png'
+import filmStill5 from '../assets/projects/its-gonna-be-okay/jordao_matthews_05.png'
 import btsPhoto1 from '../assets/projects/its-gonna-be-okay/IMG_2007.jpeg'
 import btsPhoto2 from '../assets/projects/its-gonna-be-okay/IMG_2066.jpeg'
 import btsPhoto3 from '../assets/projects/its-gonna-be-okay/IMG_9110.jpeg'
@@ -15,6 +16,11 @@ import intakeLawyerLeads from '../assets/projects/intake-lawyer/intakelawyer for
 import intakeLawyerChatbot from '../assets/projects/intake-lawyer/intakelawyer chatbot.png'
 import intakeLawyerLeadPage from '../assets/projects/intake-lawyer/intake lawyerLead page.png'
 import intakeLawyerInfoTab from '../assets/projects/intake-lawyer/intakelawyer infotab.png'
+import gmailIcon from '../assets/icons/tech/gmail-svgrepo-com.svg'
+import reactRouterIcon from '../assets/icons/tech/react-router-svgrepo-com.svg'
+import microsoftIcon from '../assets/icons/tech/microsoft graph.svg'
+import pdfLibIcon from '../assets/icons/tech/pdf-lib.svg'
+import twilioIcon from '../assets/icons/tech/twilio-icon-svgrepo-com.svg'
 import huskyGif from '../assets/projects/Huskython/HuskyThon Gif.gif'
 import huskyStill1 from '../assets/projects/Huskython/Timeline 1_01_00_24_15.jpg'
 import huskyStill2 from '../assets/projects/Huskython/Timeline 1_01_00_36_13.jpg'
@@ -23,6 +29,36 @@ import huskyStill4 from '../assets/projects/Huskython/Timeline 1_01_03_17_08.jpg
 import huskyStill5 from '../assets/projects/Huskython/Timeline 1_01_03_39_22.jpg'
 import { projectsData } from '../data/projectsData'
 import './ProjectDetail.css'
+
+function YoutubePlayer({ videoId, title }) {
+  const [playing, setPlaying] = useState(false)
+  const thumb = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`
+
+  return (
+    <div
+      className={`yt-player${playing ? '' : ' yt-player--idle'}`}
+      onClick={!playing ? () => setPlaying(true) : undefined}
+    >
+      {playing ? (
+        <iframe
+          src={`https://www.youtube.com/embed/${videoId}?autoplay=1&modestbranding=1&rel=0&iv_load_policy=3&playsinline=1`}
+          title={title}
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        />
+      ) : (
+        <>
+          <img src={thumb} alt={title} className="yt-thumb" />
+          <div className="yt-play-btn" aria-label={`Play ${title}`}>
+            <svg viewBox="0 0 24 24" fill="none" className="yt-play-icon">
+              <path d="M8 5v14l11-7z" fill="currentColor" />
+            </svg>
+          </div>
+        </>
+      )}
+    </div>
+  )
+}
 
 function VideoDetail({ project }) {
   const mediumLabel = { 'short-film': 'Short Film', 'commercial': 'Commercial', 'reel': 'Reel' }
@@ -67,13 +103,7 @@ function VideoDetail({ project }) {
         </div>
 
         <div className="video-embed-wrapper">
-          <iframe
-            src={`https://www.youtube.com/embed/${project.videoId}`}
-            title={project.title}
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
+          <YoutubePlayer videoId={project.videoId} title={project.title} />
         </div>
 
         <div className="detail-content">
@@ -428,7 +458,7 @@ function IntakeLawyerDetail({ project }) {
                 items: [
                   { name: 'React 18',     icon: 'https://cdn.simpleicons.org/react' },
                   { name: 'Vite',         icon: 'https://cdn.simpleicons.org/vite' },
-                  { name: 'React Router', icon: 'https://cdn.simpleicons.org/reactrouter' },
+                  { name: 'React Router', icon: reactRouterIcon },
                 ],
               },
               {
@@ -448,9 +478,9 @@ function IntakeLawyerDetail({ project }) {
               {
                 label: 'Integrations',
                 items: [
-                  { name: 'Gmail API',       icon: 'https://cdn.simpleicons.org/gmail' },
-                  { name: 'Microsoft Graph', icon: 'https://cdn.simpleicons.org/microsoftgraph' },
-                  { name: 'Twilio',          icon: 'https://cdn.simpleicons.org/twilio/F22F46' },
+                  { name: 'Gmail API',       icon: gmailIcon },
+                  { name: 'Microsoft Graph', icon: microsoftIcon },
+                  { name: 'Twilio',          icon: twilioIcon },
                   { name: 'Stripe',          icon: 'https://cdn.simpleicons.org/stripe' },
                 ],
               },
@@ -464,7 +494,7 @@ function IntakeLawyerDetail({ project }) {
               {
                 label: 'Libraries',
                 items: [
-                  { name: 'pdf-lib', icon: null },
+                  { name: 'pdf-lib', icon: pdfLibIcon },
                 ],
               },
             ].map(({ label, items }) => (
@@ -515,7 +545,7 @@ function IntakeLawyerDetail({ project }) {
 
 function ItsGonnaBeOkayDetail({ project }) {
   const [currentStill, setCurrentStill] = useState(0)
-  const stills = [filmStill1, filmStill2, filmStill3, filmStill4]
+  const stills = [filmStill1, filmStill2, filmStill3, filmStill4, filmStill5]
   const prev = () => setCurrentStill(i => (i - 1 + stills.length) % stills.length)
   const next = () => setCurrentStill(i => (i + 1) % stills.length)
 
@@ -540,13 +570,7 @@ function ItsGonnaBeOkayDetail({ project }) {
         {/* Hero — YouTube embed */}
         <div className="il-hero">
           <div className="video-embed-wrapper" style={{ marginBottom: 0, borderRadius: 0 }}>
-            <iframe
-              src={`https://www.youtube.com/embed/${project.videoId}`}
-              title={project.title}
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
+            <YoutubePlayer videoId={project.videoId} title={project.title} />
           </div>
         </div>
 
@@ -574,13 +598,13 @@ function ItsGonnaBeOkayDetail({ project }) {
             <span className="igbo-stills-counter">{currentStill + 1} / {stills.length}</span>
           </div>
           <div className="igbo-stills-thumbs">
-            {stills.map((src, i) => (
+            {stills.map((src, i) => i === currentStill ? null : (
               <img
                 key={i}
                 src={src}
                 alt={`Still ${i + 1}`}
                 onClick={() => setCurrentStill(i)}
-                className={`igbo-stills-thumb${i === currentStill ? ' igbo-stills-thumb--active' : ''}`}
+                className="igbo-stills-thumb"
               />
             ))}
           </div>
@@ -665,13 +689,7 @@ function HuskythonDetail({ project }) {
 
         <div className="il-hero">
           <div className="video-embed-wrapper" style={{ marginBottom: 0, borderRadius: 0 }}>
-            <iframe
-              src={`https://www.youtube.com/embed/${project.videoId}`}
-              title={project.title}
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
+            <YoutubePlayer videoId={project.videoId} title={project.title} />
           </div>
         </div>
 
@@ -721,13 +739,13 @@ function HuskythonDetail({ project }) {
             <span className="igbo-stills-counter">{currentStill + 1} / {stills.length}</span>
           </div>
           <div className="igbo-stills-thumbs">
-            {stills.map((src, i) => (
+            {stills.map((src, i) => i === currentStill ? null : (
               <img
                 key={i}
                 src={src}
                 alt={`Still ${i + 1}`}
                 onClick={() => setCurrentStill(i)}
-                className={`igbo-stills-thumb${i === currentStill ? ' igbo-stills-thumb--active' : ''}`}
+                className="igbo-stills-thumb"
               />
             ))}
           </div>

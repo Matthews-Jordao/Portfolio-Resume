@@ -2,10 +2,11 @@
    Footer
    ============================================ */
 .footer {
-  background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
-  border-top: 1px solid #e2e8f0;
+  background: linear-gradient(135deg, var(--footer-bg-start) 0%, var(--footer-bg-end) 100%);
+  border-top: 1px solid var(--footer-border);
   padding: 60px 0 0;
   margin-top: 100px;
+  transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 .footer-container {
@@ -19,7 +20,7 @@
   justify-content: space-between;
   align-items: center;
   padding-bottom: 40px;
-  border-bottom: 1px solid #e2e8f0;
+  border-bottom: 1px solid var(--footer-border);
 }
 
 .footer-brand {
@@ -39,7 +40,7 @@
 
 .footer-tagline {
   font-size: 14px;
-  color: #4a5568;
+  color: var(--footer-text);
   margin: 0;
   font-weight: 400;
 }
@@ -51,7 +52,7 @@
 }
 
 .footer-links a {
-  color: #4a5568;
+  color: var(--footer-text);
   text-decoration: none;
   font-size: 14px;
   font-weight: 500;
@@ -69,7 +70,7 @@
 }
 
 .footer-copyright {
-  color: #718096;
+  color: var(--footer-copyright);
   font-size: 13px;
   font-weight: 400;
   margin: 0;
@@ -102,7 +103,6 @@
     justify-content: center;
   }
 
-  /* Make footer links easier to tap on mobile */
   .footer-links a {
     display: inline-block;
     padding: 10px 8px;
@@ -151,7 +151,7 @@
     width: 100%;
     padding: 12px 10px;
     border-radius: 8px;
-    background: rgba(0,0,0,0.02);
+    background: rgba(0, 0, 0, 0.02);
     text-align: center;
   }
 

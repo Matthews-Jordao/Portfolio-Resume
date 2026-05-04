@@ -59,21 +59,21 @@
 /* Fallback for browsers that don't support backdrop-filter */
 @supports not (backdrop-filter: blur(3px)) {
   .nav-circle::before {
-    background: rgba(255, 255, 255, 0.3);
+    background: var(--nav-glass-fallback);
   }
 }
 
-/* White tint overlay for glass effect */
+/* Glass tint overlay */
 .nav-circle::after {
   content: '';
   z-index: -1;
   position: absolute;
   inset: 0;
-  background: rgba(255, 255, 255, 0.50);
+  background: var(--nav-glass);
   border-radius: 50px;
   pointer-events: none;
-  box-shadow: inset 2px 2px 1px 0 rgba(255, 255, 255, 0.5),
-    inset -1px -1px 1px 1px rgba(255, 255, 255, 0.5);
+  box-shadow: inset 2px 2px 1px 0 rgba(255, 255, 255, 0.08),
+    inset -1px -1px 1px 1px rgba(255, 255, 255, 0.04);
 }
 
 /* Nav circle expand animation */

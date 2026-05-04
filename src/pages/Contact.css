@@ -24,7 +24,7 @@
   font-size: 64px;
   font-weight: 700;
   margin-bottom: 20px;
-  color: #1a2332;
+  color: var(--text-primary);
   position: relative;
   display: inline-block;
 }
@@ -41,7 +41,7 @@
 }
 
 .contact-intro {
-  color: #4a5568;
+  color: var(--text-muted);
   font-size: 16px;
   max-width: 600px;
   margin-top: 50px;
@@ -60,8 +60,8 @@
    Form Styles
    ============================================ */
 .contact-form {
-  background: rgba(255, 255, 255, 0.95);
-  border: 1px solid #d1d5db;
+  background: var(--card-bg);
+  border: 1px solid var(--border-input);
   border-radius: 20px;
   padding: 40px;
   backdrop-filter: blur(10px);
@@ -76,7 +76,7 @@
   display: block;
   font-size: 14px;
   font-weight: 600;
-  color: #1f2937;
+  color: var(--text-primary);
   margin-bottom: 8px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -86,11 +86,11 @@
 .contact-form input,
 .contact-form textarea {
   width: 100%;
-  background: rgba(255, 255, 255, 1);
-  border: 1px solid #d1d5db;
+  background: var(--input-bg);
+  border: 1px solid var(--border-input);
   border-radius: 10px;
   padding: 12px 16px;
-  color: #1f2937;
+  color: var(--text-primary);
   font-family: inherit;
   font-size: 14px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -99,13 +99,13 @@
 
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
-  color: #9ca3af;
+  color: var(--text-placeholder);
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
   outline: none;
-  background: rgba(255, 255, 255, 1);
+  background: var(--input-bg);
   border-color: #6b9eff;
   box-shadow: 0 0 20px rgba(107, 158, 255, 0.15);
 }
@@ -164,7 +164,7 @@
 .info-group h3 {
   font-size: 18px;
   font-weight: 600;
-  color: #1a2332;
+  color: var(--text-primary);
   margin-bottom: 20px;
 }
 
@@ -205,7 +205,7 @@
 }
 
 .facts-list li {
-  color: #4a5568;
+  color: var(--text-muted);
   font-size: 14px;
   line-height: 1.6;
   padding: 10px;

@@ -6,7 +6,7 @@
   align-items: center;
   justify-content: center;
   padding: 185px 40px 50px;
-  background: white;
+  background: var(--bg-primary);
   max-width: 1600px;
   margin: 0 auto;
   width: 100%;

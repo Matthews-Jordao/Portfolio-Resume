@@ -1,7 +1,10 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npx vite *)"
+      "Bash(npx vite *)",
+      "Bash(npm run *)",
+      "Bash(del \"c:\\\\Users\\\\matth\\\\Desktop\\\\Projects\\\\Portfolio-Resume\\\\src\\\\components\\\\IrisTransition.jsx\")",
+      "Bash(del \"c:\\\\Users\\\\matth\\\\Desktop\\\\Projects\\\\Portfolio-Resume\\\\src\\\\components\\\\IrisTransition.css\")"
     ]
   }
 }

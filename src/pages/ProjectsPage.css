@@ -21,11 +21,11 @@
   font-weight: 500;
   letter-spacing: -0.02em;
   margin-bottom: 16px;
-  color: #1A1A1A;
+  color: var(--text-primary);
 }
 
 .projects-intro {
-  color: #666;
+  color: var(--text-muted);
   font-size: 15px;
   max-width: 480px;
   margin-bottom: 56px;
@@ -38,7 +38,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid #EBEBEB;
+  border-bottom: 1px solid var(--separator);
   margin-bottom: 0;
 }
 
@@ -57,25 +57,25 @@
   font-size: 14px;
   font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
   font-weight: 400;
-  color: #aaa;
+  color: var(--text-faint);
   cursor: pointer;
   transition: color 0.2s, border-color 0.2s;
   letter-spacing: -0.01em;
 }
 
 .primary-filter.active {
-  color: #1A1A1A;
-  border-bottom-color: #1A1A1A;
+  color: var(--text-primary);
+  border-bottom-color: var(--text-primary);
   font-weight: 500;
 }
 
 .primary-filter:hover:not(.active) {
-  color: #555;
+  color: var(--text-body);
 }
 
 .ownership-toggle {
   display: flex;
-  border: 1px solid #EBEBEB;
+  border: 1px solid var(--separator);
   border-radius: 3px;
   overflow: hidden;
   margin-bottom: 14px;
@@ -84,12 +84,12 @@
 .ownership-btn {
   background: none;
   border: none;
-  border-right: 1px solid #EBEBEB;
+  border-right: 1px solid var(--separator);
   padding: 5px 13px;
   font-size: 11px;
   font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
   font-weight: 500;
-  color: #999;
+  color: var(--text-faint);
   cursor: pointer;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -101,19 +101,19 @@
 }
 
 .ownership-btn.active {
-  background: #1A1A1A;
-  color: #fff;
+  background: var(--text-primary);
+  color: var(--bg-primary);
 }
 
 .ownership-btn:hover:not(.active) {
-  color: #555;
+  color: var(--text-body);
 }
 
 .sub-filters {
   display: flex;
   gap: 28px;
   padding: 20px 0 32px;
-  border-bottom: 1px solid #EBEBEB;
+  border-bottom: 1px solid var(--separator);
   margin-bottom: 48px;
 }
 
@@ -123,7 +123,7 @@
   font-size: 11px;
   font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
   font-weight: 500;
-  color: #bbb;
+  color: var(--text-faint);
   cursor: pointer;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -132,11 +132,11 @@
 }
 
 .sub-filter.active {
-  color: #1A1A1A;
+  color: var(--text-primary);
 }
 
 .sub-filter:hover:not(.active) {
-  color: #666;
+  color: var(--text-muted);
 }
 
 /* when sub-filters are hidden, add top margin to grid */
@@ -169,16 +169,16 @@
 .project-card {
   display: flex;
   flex-direction: column;
-  border: 1px solid #EBEBEB;
+  border: 1px solid var(--separator);
   border-radius: 8px;
   overflow: hidden;
-  background: #F5F5F3;
+  background: var(--bg-card);
   position: relative;
   transition: transform 0.15s ease-out, border-color 0.25s ease;
 }
 
 .project-card:hover {
-  border-color: #1A1A1A;
+  border-color: var(--text-primary);
 }
 
 .project-image-container {
@@ -200,7 +200,7 @@
 .project-image--logo {
   object-fit: contain;
   padding: 36px 48px;
-  background: #fff;
+  background: var(--bg-primary);
 }
 
 .project-overlay {
@@ -282,7 +282,7 @@
   font-weight: 500;
   letter-spacing: -0.01em;
   margin: 0 0 12px 0;
-  color: #1A1A1A;
+  color: var(--text-primary);
 }
 
 .project-tech-stack {
@@ -307,8 +307,8 @@
 .tech-text {
   font-size: 11px;
   padding: 3px 8px;
-  background: #EBEBEB;
-  color: #555;
+  background: var(--separator);
+  color: var(--badge-color);
   border-radius: 2px;
   font-weight: 500;
   letter-spacing: 0.02em;
@@ -316,7 +316,7 @@
 
 .project-description {
   font-size: 13px;
-  color: #666;
+  color: var(--text-muted);
   line-height: 1.65;
   margin: 0;
   flex-grow: 1;
@@ -373,16 +373,16 @@
   display: flex;
   gap: 16px;
   font-size: 12px;
-  color: #999;
+  color: var(--text-faint);
   margin-bottom: 10px;
   letter-spacing: 0.01em;
 }
 
-/* ── Tech icon tooltip (matches TechStack.css) ── */
+/* ── Tech icon tooltip ── */
 
 .tech-tooltip {
-  background: var(--text-primary, #1A1A1A);
-  color: white;
+  background: var(--text-primary);
+  color: var(--bg-primary);
   padding: 6px 12px;
   border-radius: 6px;
   font-size: 12px;
@@ -400,7 +400,7 @@
   left: 50%;
   transform: translateX(-50%);
   border: 4px solid transparent;
-  border-top-color: var(--text-primary, #1A1A1A);
+  border-top-color: var(--text-primary);
 }
 
 @keyframes tooltipFadeIn {
