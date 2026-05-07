@@ -333,6 +333,10 @@
   background: var(--bg-card);
 }
 
+.related-card img.related-card-img--logo-atendi {
+  padding: 14px 20px;
+}
+
 .related-card h3 {
   font-size: 15px;
   font-weight: 500;
@@ -688,6 +692,10 @@
 
 .il-brand-card--gradient {
   background: linear-gradient(135deg, #2938D4 0%, #00C4FF 100%);
+}
+
+.il-brand-card--atendi {
+  background: linear-gradient(135deg, #1B2FA8 0%, #00C9A7 100%);
 }
 
 .il-brand-card--light {

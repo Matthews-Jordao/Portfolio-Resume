@@ -91,6 +91,18 @@
   transition: all 0.4s ease;
 }
 
+.project-image--logo {
+  object-fit: contain;
+  padding: 36px 48px;
+  background: var(--bg-primary);
+}
+
+.project-image--logo-atendi {
+  object-fit: contain;
+  padding: 20px 28px;
+  background: var(--bg-primary);
+}
+
 .project-overlay {
   position: absolute;
   top: 0;

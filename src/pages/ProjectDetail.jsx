@@ -27,6 +27,13 @@ import huskyStill2 from '../assets/projects/Huskython/Timeline 1_01_00_36_13.jpg
 import huskyStill3 from '../assets/projects/Huskython/Timeline 1_01_02_17_18.jpg'
 import huskyStill4 from '../assets/projects/Huskython/Timeline 1_01_03_17_08.jpg'
 import huskyStill5 from '../assets/projects/Huskython/Timeline 1_01_03_39_22.jpg'
+import atendiSideLogo from '../assets/projects/atendi/Atendi Side Transparent.png'
+import atendiStackedLogo from '../assets/projects/atendi/Atendi Stacked Transparent.png'
+import atendiBrandHero from '../assets/projects/atendi/atendi-hero.svg'
+import atendiFeatures from '../assets/projects/atendi/atendi-features.svg'
+import atendiBooking from '../assets/projects/atendi/atendi-booking.svg'
+import atendiCall from '../assets/projects/atendi/atendi-call.svg'
+import atendiTranslation from '../assets/projects/atendi/atendi-translation.svg'
 import { projectsData } from '../data/projectsData'
 import './ProjectDetail.css'
 
@@ -148,7 +155,7 @@ function VideoDetail({ project }) {
               .slice(0, 3)
               .map(p => (
                 <Link key={p.id} to={`/projects/${p.slug}`} className="related-card">
-                  <img src={p.logoCard ? intakeLawyerLogo : p.image} alt={p.title} className={p.logoCard ? 'related-card-img--logo' : ''} />
+                  <img src={p.logoCard ? (p.slug === 'atendi-ai' ? atendiStackedLogo : intakeLawyerLogo) : p.image} alt={p.title} className={p.logoCard ? (p.slug === 'atendi-ai' ? 'related-card-img--logo related-card-img--logo-atendi' : 'related-card-img--logo') : ''} />
                   <h3>{p.title}</h3>
                   <p>{p.shortDescription}</p>
                 </Link>
@@ -290,7 +297,7 @@ function WebDetail({ project }) {
               .slice(0, 3)
               .map(p => (
                 <Link key={p.id} to={`/projects/${p.slug}`} className="related-card">
-                  <img src={p.logoCard ? intakeLawyerLogo : p.image} alt={p.title} className={p.logoCard ? 'related-card-img--logo' : ''} />
+                  <img src={p.logoCard ? (p.slug === 'atendi-ai' ? atendiStackedLogo : intakeLawyerLogo) : p.image} alt={p.title} className={p.logoCard ? (p.slug === 'atendi-ai' ? 'related-card-img--logo related-card-img--logo-atendi' : 'related-card-img--logo') : ''} />
                   <h3>{p.title}</h3>
                   <p>{p.shortDescription}</p>
                 </Link>
@@ -312,6 +319,211 @@ function StackIcon({ name, icon }) {
         : <div className="il-stack-icon-text">{abbr}</div>
       }
       <span className="il-stack-icon-name">{name}</span>
+    </div>
+  )
+}
+
+function AtendaiDetail({ project }) {
+  const [zoomed, setZoomed] = useState(null)
+  const callImgRef = useRef(null)
+  const translationImgRef = useRef(null)
+
+  const trackOrigin = (e, imgRef, isZoomed) => {
+    if (isZoomed) return
+    const rect = e.currentTarget.getBoundingClientRect()
+    const x = ((e.clientX - rect.left) / rect.width) * 100
+    const y = ((e.clientY - rect.top) / rect.height) * 100
+    if (imgRef.current) {
+      imgRef.current.style.transformOrigin = `${x}% ${y}%`
+    }
+  }
+
+  return (
+    <div className="il-detail">
+      <div className="il-container">
+        <Link to="/projects" className="back-link">← Back to Work</Link>
+
+        <div className="il-header">
+          <div>
+            <img src={atendiSideLogo} alt="Atendi AI" className="il-brand-logo" />
+            <h1 className="il-title">{project.title}</h1>
+          </div>
+          <div className="il-meta-table">
+            <div className="il-meta-row"><span>Type</span><span>Web App</span></div>
+            <div className="il-meta-row"><span>Role</span><span>Designer & Developer</span></div>
+            <div className="il-meta-row"><span>Stack</span><span>React · Node.js · Twilio</span></div>
+            <div className="il-meta-row"><span>Year</span><span>2024 – Present</span></div>
+            <div className="il-meta-row">
+              <span>Live</span>
+              <span>
+                <a href="https://atendi-ai.com" target="_blank" rel="noopener noreferrer">
+                  atendi-ai.com
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div className="il-hero">
+          <img
+            src={atendiBrandHero}
+            alt="Atendi AI — dashboard"
+            className="il-hero-img"
+          />
+        </div>
+
+        <div className="il-split">
+          <div className="il-split-lede">
+            <p>A 24/7 AI voice receptionist that answers every call, books every appointment, and bridges the language gap between businesses and their customers.</p>
+          </div>
+          <div className="il-split-body">
+            <p>Many small businesses lose clients simply because no one picks up the phone — especially during off-hours, peak periods, or when staff are already with a customer. Atendi AI steps in as a fully automated receptionist: it answers inbound calls, understands caller intent through natural language, and books appointments directly into the business calendar without human intervention.</p>
+            <p>The product is specifically designed for two underserved markets: non-English speaking businesses that need an English-fluent receptionist to speak with English-speaking customers, and English-speaking businesses that want to better serve a Spanish or multilingual clientele. Atendi handles both directions seamlessly in real time.</p>
+          </div>
+        </div>
+
+        <div className="il-full-img">
+          <img src={atendiFeatures} alt="Atendi AI — features overview" className="il-full-img-el" style={{ objectPosition: 'top' }} />
+        </div>
+
+        <div className="il-split">
+          <div className="il-split-lede">
+            <p>Speak any language. Serve every customer.</p>
+          </div>
+          <div className="il-split-body">
+            <p>Atendi AI's real-time translation layer lets a business owner who speaks only Spanish run a fully English-facing reception operation. When an English-speaking customer calls, Atendi answers in English, conducts the full conversation, and relays intent and booking details back to the business — all without a bilingual staff member involved.</p>
+            <p>The same system works in reverse: an English-speaking business can enable Spanish-language inbound support, removing the friction that causes non-English customers to hang up or go elsewhere. Every conversation is transcribed, translated, and surfaced in the business dashboard in the owner's preferred language.</p>
+          </div>
+        </div>
+
+        <div className="il-img-grid">
+          <div className="il-brand-card il-brand-card--light">
+            <img src={atendiStackedLogo} alt="Atendi AI stacked logo" style={{ width: '45%', height: 'auto', objectFit: 'contain' }} />
+          </div>
+          <div className="il-brand-card il-brand-card--light">
+            <img src={atendiSideLogo} alt="Atendi AI logo" className="il-brand-logo-display" />
+          </div>
+        </div>
+
+        <div className="il-full-img">
+          <img src={atendiBooking} alt="Atendi AI — appointment booking" className="il-full-img-el" style={{ objectPosition: 'top' }} />
+        </div>
+
+        <div className="il-img-grid">
+          <div
+            className={`il-zoom-wrap${zoomed === 'call' ? ' il-zoom-wrap--active' : ''}`}
+            onClick={() => setZoomed(zoomed === 'call' ? null : 'call')}
+            onMouseMove={(e) => trackOrigin(e, callImgRef, zoomed === 'call')}
+          >
+            <img
+              ref={callImgRef}
+              src={atendiCall}
+              alt="Live call interface"
+              className={`il-zoom-img${zoomed === 'call' ? ' il-zoom-img--in' : ''}`}
+            />
+          </div>
+          <div
+            className={`il-zoom-wrap${zoomed === 'translation' ? ' il-zoom-wrap--active' : ''}`}
+            onClick={() => setZoomed(zoomed === 'translation' ? null : 'translation')}
+            onMouseMove={(e) => trackOrigin(e, translationImgRef, zoomed === 'translation')}
+          >
+            <img
+              ref={translationImgRef}
+              src={atendiTranslation}
+              alt="Translation interface"
+              className={`il-zoom-img${zoomed === 'translation' ? ' il-zoom-img--in' : ''}`}
+            />
+          </div>
+        </div>
+
+        <div className="il-split">
+          <div className="il-split-lede">
+            <p>Twilio-powered voice AI — built for real call volume and real-world edge cases.</p>
+          </div>
+          <div className="il-split-body">
+            <p>Every inbound call is routed through the Twilio Voice SDK into a real-time speech recognition pipeline backed by Google Cloud Speech-to-Text. The transcription feeds a natural language understanding layer that classifies caller intent — booking, rescheduling, cancellation, general inquiry — and routes the conversation through the appropriate automated flow.</p>
+            <p>Appointment booking integrates directly with the business's calendar system, checking availability and confirming slots in real time during the call. The backend is built on Node.js with a multi-tenant architecture, ensuring each business's call logs, contacts, and booking data remain fully scoped and isolated. All conversations are stored, searchable, and available as translated transcripts in the dashboard.</p>
+          </div>
+        </div>
+
+        <div className="il-section">
+          <span className="section-label" style={{ textAlign: 'center' }}>Stack</span>
+          <div className="il-stack-groups">
+            {[
+              {
+                label: 'Frontend',
+                items: [
+                  { name: 'React',        icon: 'https://cdn.simpleicons.org/react' },
+                  { name: 'Vite',         icon: 'https://cdn.simpleicons.org/vite' },
+                  { name: 'React Router', icon: reactRouterIcon },
+                ],
+              },
+              {
+                label: 'Backend',
+                items: [
+                  { name: 'Node.js', icon: 'https://cdn.simpleicons.org/nodedotjs' },
+                  { name: 'Express', icon: 'https://cdn.simpleicons.org/express/555555' },
+                ],
+              },
+              {
+                label: 'Voice',
+                items: [
+                  { name: 'Twilio',  icon: twilioIcon },
+                  { name: 'WebRTC',  icon: null },
+                ],
+              },
+              {
+                label: 'AI / Speech',
+                items: [
+                  { name: 'Google Cloud', icon: 'https://cdn.simpleicons.org/googlecloud' },
+                ],
+              },
+              {
+                label: 'Infrastructure',
+                items: [
+                  { name: 'Vercel', icon: 'https://cdn.simpleicons.org/vercel/000000' },
+                ],
+              },
+            ].map(({ label, items }) => (
+              <div key={label} className="il-stack-group">
+                <span className="il-stack-group-label">{label}</span>
+                <div className="il-stack-icons">
+                  {items.map(({ name, icon }) => (
+                    <StackIcon key={name} name={name} icon={icon} />
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="il-cta">
+          <a
+            href="https://atendi-ai.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="cta-button live-button"
+          >
+            Visit atendi-ai.com →
+          </a>
+        </div>
+
+        <div className="related-projects">
+          <h2>More Work</h2>
+          <div className="related-grid">
+            {projectsData
+              .filter(p => p.id !== project.id)
+              .slice(0, 3)
+              .map(p => (
+                <Link key={p.id} to={`/projects/${p.slug}`} className="related-card">
+                  <img src={p.logoCard ? (p.slug === 'atendi-ai' ? atendiStackedLogo : intakeLawyerLogo) : p.image} alt={p.title} className={p.logoCard ? (p.slug === 'atendi-ai' ? 'related-card-img--logo related-card-img--logo-atendi' : 'related-card-img--logo') : ''} />
+                  <h3>{p.title}</h3>
+                  <p>{p.shortDescription}</p>
+                </Link>
+              ))}
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
@@ -530,7 +742,7 @@ function IntakeLawyerDetail({ project }) {
               .slice(0, 3)
               .map(p => (
                 <Link key={p.id} to={`/projects/${p.slug}`} className="related-card">
-                  <img src={p.logoCard ? intakeLawyerLogo : p.image} alt={p.title} className={p.logoCard ? 'related-card-img--logo' : ''} />
+                  <img src={p.logoCard ? (p.slug === 'atendi-ai' ? atendiStackedLogo : intakeLawyerLogo) : p.image} alt={p.title} className={p.logoCard ? (p.slug === 'atendi-ai' ? 'related-card-img--logo related-card-img--logo-atendi' : 'related-card-img--logo') : ''} />
                   <h3>{p.title}</h3>
                   <p>{p.shortDescription}</p>
                 </Link>
@@ -651,7 +863,7 @@ function ItsGonnaBeOkayDetail({ project }) {
               .slice(0, 3)
               .map(p => (
                 <Link key={p.id} to={`/projects/${p.slug}`} className="related-card">
-                  <img src={p.logoCard ? intakeLawyerLogo : p.image} alt={p.title} className={p.logoCard ? 'related-card-img--logo' : ''} />
+                  <img src={p.logoCard ? (p.slug === 'atendi-ai' ? atendiStackedLogo : intakeLawyerLogo) : p.image} alt={p.title} className={p.logoCard ? (p.slug === 'atendi-ai' ? 'related-card-img--logo related-card-img--logo-atendi' : 'related-card-img--logo') : ''} />
                   <h3>{p.title}</h3>
                   <p>{p.shortDescription}</p>
                 </Link>
@@ -773,7 +985,7 @@ function HuskythonDetail({ project }) {
           <div className="related-grid">
             {projectsData.filter(p => p.id !== project.id).slice(0, 3).map(p => (
               <Link key={p.id} to={`/projects/${p.slug}`} className="related-card">
-                <img src={p.logoCard ? intakeLawyerLogo : p.image} alt={p.title} className={p.logoCard ? 'related-card-img--logo' : ''} />
+                <img src={p.logoCard ? (p.slug === 'atendi-ai' ? atendiStackedLogo : intakeLawyerLogo) : p.image} alt={p.title} className={p.logoCard ? (p.slug === 'atendi-ai' ? 'related-card-img--logo related-card-img--logo-atendi' : 'related-card-img--logo') : ''} />
                 <h3>{p.title}</h3>
                 <p>{p.shortDescription}</p>
               </Link>
@@ -806,5 +1018,6 @@ export default function ProjectDetail() {
   if (project.slug === 'huskython') return <HuskythonDetail project={project} />
   if (project.slug === 'its-gonna-be-okay') return <ItsGonnaBeOkayDetail project={project} />
   if (project.slug === 'intake-lawyer') return <IntakeLawyerDetail project={project} />
+  if (project.slug === 'atendi-ai') return <AtendaiDetail project={project} />
   return <WebDetail project={project} />
 }

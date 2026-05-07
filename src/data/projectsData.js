@@ -8,6 +8,7 @@ export const projectsData = [
     shortDescription: 'AI voice receptionist for calls & bookings',
     description: 'Advanced AI voice receptionist system that intelligently handles incoming calls, manages messages, and automates appointment booking with natural language processing.',
     image: 'https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=500&h=300&fit=crop&auto=format',
+    logoCard: true,
     tags: ['JavaScript', 'Node.js', 'React', 'CSS3'],
     label: 'Web App',
     featured: true,

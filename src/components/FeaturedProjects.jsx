@@ -4,6 +4,7 @@ import { projectsData } from '../data/projectsData'
 import './FeaturedProjects.css'
 
 import intakeLawyerLogo from '../assets/projects/intake-lawyer/intakeLawyer-Logo-toIv-fit.png'
+import atendiLogo from '../assets/projects/atendi/Atendi Stacked Transparent.png'
 import reactIcon from '../assets/icons/tech/react-svgrepo-com.svg'
 import nodeIcon from '../assets/icons/tech/node-js-svgrepo-com.svg'
 import mongoIcon from '../assets/icons/tech/mongo-svgrepo-com.svg'
@@ -83,9 +84,9 @@ export default function FeaturedProjects() {
               >
                 <div className="project-image-container">
                   <img
-                    src={project.logoCard ? intakeLawyerLogo : project.image}
+                    src={project.logoCard ? (project.slug === 'atendi-ai' ? atendiLogo : intakeLawyerLogo) : project.image}
                     alt={project.title}
-                    className={`project-image${project.logoCard ? ' project-image--logo' : ''}`}
+                    className={`project-image${project.logoCard ? (project.slug === 'atendi-ai' ? ' project-image--logo-atendi' : ' project-image--logo') : ''}`}
                   />
                   {project.label && <span className="video-type-label">{project.label}</span>}
                   <div className="project-overlay">
