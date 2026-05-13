@@ -5,6 +5,7 @@ import './ProjectsPage.css'
 
 import intakeLawyerLogo from '../assets/projects/intake-lawyer/intakeLawyer-Logo-toIv-fit.png'
 import atendiLogo from '../assets/projects/atendi/Atendi Stacked Transparent.png'
+import gameLineLogo from '../assets/projects/Game Line/gameline.png'
 import reactIcon from '../assets/icons/tech/react-svgrepo-com.svg'
 import nodeIcon from '../assets/icons/tech/node-js-svgrepo-com.svg'
 import mongoIcon from '../assets/icons/tech/mongo-svgrepo-com.svg'
@@ -17,6 +18,7 @@ import supabaseIcon from '../assets/icons/tech/supabase-logo-icon.png'
 import twilioIcon from '../assets/icons/tech/twilio-icon-svgrepo-com.svg'
 import huskyGif from '../assets/projects/Huskython/HuskyThon Gif.gif'
 import huskyStatic from '../assets/projects/Huskython/2024.png'
+import webRtcIcon from '../assets/icons/tech/Webrtc SVG Vector.svg'
 
 const cardGifMap = {
   'huskython': { gif: huskyGif, static: huskyStatic },
@@ -37,6 +39,7 @@ const techStackIcons = {
   'Twilio': twilioIcon,
   'Stripe': 'https://cdn.simpleicons.org/stripe/635BFF',
   'Vercel': 'https://cdn.simpleicons.org/vercel/000000',
+  'WebRTC': webRtcIcon,
 }
 
 const mediumLabel = { 'short-film': 'Short Film', 'commercial': 'Commercial', 'reel': 'Reel' }
@@ -57,7 +60,7 @@ function WebCard({ project, cardRef, onMouseEnter, onMouseMove, onMouseLeave }) 
         >
           <div className="project-image-container">
             <img
-              src={project.logoCard ? (project.slug === 'atendi-ai' ? atendiLogo : intakeLawyerLogo) : project.image}
+              src={project.logoCard ? (project.slug === 'atendi-ai' ? atendiLogo : project.slug === 'game-line' ? gameLineLogo : intakeLawyerLogo) : project.image}
               alt={project.title}
               className={`project-image${project.logoCard ? (project.slug === 'atendi-ai' ? ' project-image--logo-atendi' : ' project-image--logo') : ''}`}
             />

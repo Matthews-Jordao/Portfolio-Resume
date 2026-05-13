@@ -1,0 +1,14 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>Screen Wake Lock Icon</title>
+  <path d="M150 224V170C150 111.5 197.5 64 256 64C314.5 64 362 111.5 362 170V224" stroke="#0B1F33" stroke-width="42" stroke-linecap="round"/>
+  <rect x="112" y="206" width="288" height="238" rx="42" fill="#0B1F33"/>
+  <circle cx="256" cy="324" r="54" fill="#FFC928"/>
+  <path d="M256 246V222" stroke="#FFC928" stroke-width="20" stroke-linecap="round"/>
+  <path d="M256 426V402" stroke="#FFC928" stroke-width="20" stroke-linecap="round"/>
+  <path d="M334 324H358" stroke="#FFC928" stroke-width="20" stroke-linecap="round"/>
+  <path d="M154 324H178" stroke="#FFC928" stroke-width="20" stroke-linecap="round"/>
+  <path d="M311.2 268.8L328.2 251.8" stroke="#FFC928" stroke-width="20" stroke-linecap="round"/>
+  <path d="M183.8 396.2L200.8 379.2" stroke="#FFC928" stroke-width="20" stroke-linecap="round"/>
+  <path d="M311.2 379.2L328.2 396.2" stroke="#FFC928" stroke-width="20" stroke-linecap="round"/>
+  <path d="M183.8 251.8L200.8 268.8" stroke="#FFC928" stroke-width="20" stroke-linecap="round"/>
+</svg>

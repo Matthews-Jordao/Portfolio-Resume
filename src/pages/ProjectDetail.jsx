@@ -18,6 +18,7 @@ import intakeLawyerLeadPage from '../assets/projects/intake-lawyer/intake lawyer
 import intakeLawyerInfoTab from '../assets/projects/intake-lawyer/intakelawyer infotab.png'
 import gmailIcon from '../assets/icons/tech/gmail-svgrepo-com.svg'
 import reactRouterIcon from '../assets/icons/tech/react-router-svgrepo-com.svg'
+import viteIcon from '../assets/icons/tech/vitejs-svgrepo-com.svg'
 import microsoftIcon from '../assets/icons/tech/microsoft graph.svg'
 import pdfLibIcon from '../assets/icons/tech/pdf-lib.svg'
 import twilioIcon from '../assets/icons/tech/twilio-icon-svgrepo-com.svg'
@@ -27,6 +28,18 @@ import huskyStill2 from '../assets/projects/Huskython/Timeline 1_01_00_36_13.jpg
 import huskyStill3 from '../assets/projects/Huskython/Timeline 1_01_02_17_18.jpg'
 import huskyStill4 from '../assets/projects/Huskython/Timeline 1_01_03_17_08.jpg'
 import huskyStill5 from '../assets/projects/Huskython/Timeline 1_01_03_39_22.jpg'
+import gameLineLogo from '../assets/projects/Game Line/gameline.png'
+import gameLineCardFlipUp from '../assets/projects/Game Line/card-flipup.png'
+import gameLineCardSecretAgent from '../assets/projects/Game Line/card-secret-agent.png'
+import gameLineCardGaslight from '../assets/projects/Game Line/gaslight-or-burn.png'
+import gameLineCardTruthOrDare from '../assets/projects/Game Line/truth or dare.png'
+import gameLineScreenshot from '../assets/projects/Game Line/Screen shot of Game Line.png'
+import gameLineSecretAgentScreenshot from '../assets/projects/Game Line/secret agent screen shot.png'
+import peerJsIcon from '../assets/icons/tech/peerjs logo.svg'
+import webRtcIcon from '../assets/icons/tech/Webrtc SVG Vector.svg'
+import deviceOrientationIcon from '../assets/icons/tech/device orientation.webp'
+import webAudioIcon from '../assets/icons/tech/speaker-filled-audio-tool.png'
+import screenWakeLockIcon from '../assets/icons/tech/screen wake lock.svg'
 import atendiSideLogo from '../assets/projects/atendi/Atendi Side Transparent.png'
 import atendiStackedLogo from '../assets/projects/atendi/Atendi Stacked Transparent.png'
 import atendiBrandHero from '../assets/projects/atendi/atendi-hero.svg'
@@ -155,7 +168,7 @@ function VideoDetail({ project }) {
               .slice(0, 3)
               .map(p => (
                 <Link key={p.id} to={`/projects/${p.slug}`} className="related-card">
-                  <img src={p.logoCard ? (p.slug === 'atendi-ai' ? atendiStackedLogo : intakeLawyerLogo) : p.image} alt={p.title} className={p.logoCard ? (p.slug === 'atendi-ai' ? 'related-card-img--logo related-card-img--logo-atendi' : 'related-card-img--logo') : ''} />
+                  <img src={p.logoCard ? (p.slug === 'atendi-ai' ? atendiStackedLogo : p.slug === 'game-line' ? gameLineLogo : intakeLawyerLogo) : p.image} alt={p.title} className={p.logoCard ? (p.slug === 'atendi-ai' ? 'related-card-img--logo related-card-img--logo-atendi' : 'related-card-img--logo') : ''} />
                   <h3>{p.title}</h3>
                   <p>{p.shortDescription}</p>
                 </Link>
@@ -297,7 +310,7 @@ function WebDetail({ project }) {
               .slice(0, 3)
               .map(p => (
                 <Link key={p.id} to={`/projects/${p.slug}`} className="related-card">
-                  <img src={p.logoCard ? (p.slug === 'atendi-ai' ? atendiStackedLogo : intakeLawyerLogo) : p.image} alt={p.title} className={p.logoCard ? (p.slug === 'atendi-ai' ? 'related-card-img--logo related-card-img--logo-atendi' : 'related-card-img--logo') : ''} />
+                  <img src={p.logoCard ? (p.slug === 'atendi-ai' ? atendiStackedLogo : p.slug === 'game-line' ? gameLineLogo : intakeLawyerLogo) : p.image} alt={p.title} className={p.logoCard ? (p.slug === 'atendi-ai' ? 'related-card-img--logo related-card-img--logo-atendi' : 'related-card-img--logo') : ''} />
                   <h3>{p.title}</h3>
                   <p>{p.shortDescription}</p>
                 </Link>
@@ -454,7 +467,7 @@ function AtendaiDetail({ project }) {
                 label: 'Frontend',
                 items: [
                   { name: 'React',        icon: 'https://cdn.simpleicons.org/react' },
-                  { name: 'Vite',         icon: 'https://cdn.simpleicons.org/vite' },
+                  { name: 'Vite',         icon: viteIcon },
                   { name: 'React Router', icon: reactRouterIcon },
                 ],
               },
@@ -469,7 +482,7 @@ function AtendaiDetail({ project }) {
                 label: 'Voice',
                 items: [
                   { name: 'Twilio',  icon: twilioIcon },
-                  { name: 'WebRTC',  icon: null },
+                  { name: 'WebRTC',  icon: webRtcIcon },
                 ],
               },
               {
@@ -516,7 +529,7 @@ function AtendaiDetail({ project }) {
               .slice(0, 3)
               .map(p => (
                 <Link key={p.id} to={`/projects/${p.slug}`} className="related-card">
-                  <img src={p.logoCard ? (p.slug === 'atendi-ai' ? atendiStackedLogo : intakeLawyerLogo) : p.image} alt={p.title} className={p.logoCard ? (p.slug === 'atendi-ai' ? 'related-card-img--logo related-card-img--logo-atendi' : 'related-card-img--logo') : ''} />
+                  <img src={p.logoCard ? (p.slug === 'atendi-ai' ? atendiStackedLogo : p.slug === 'game-line' ? gameLineLogo : intakeLawyerLogo) : p.image} alt={p.title} className={p.logoCard ? (p.slug === 'atendi-ai' ? 'related-card-img--logo related-card-img--logo-atendi' : 'related-card-img--logo') : ''} />
                   <h3>{p.title}</h3>
                   <p>{p.shortDescription}</p>
                 </Link>
@@ -669,7 +682,7 @@ function IntakeLawyerDetail({ project }) {
                 label: 'Frontend',
                 items: [
                   { name: 'React 18',     icon: 'https://cdn.simpleicons.org/react' },
-                  { name: 'Vite',         icon: 'https://cdn.simpleicons.org/vite' },
+                  { name: 'Vite',         icon: viteIcon },
                   { name: 'React Router', icon: reactRouterIcon },
                 ],
               },
@@ -742,7 +755,7 @@ function IntakeLawyerDetail({ project }) {
               .slice(0, 3)
               .map(p => (
                 <Link key={p.id} to={`/projects/${p.slug}`} className="related-card">
-                  <img src={p.logoCard ? (p.slug === 'atendi-ai' ? atendiStackedLogo : intakeLawyerLogo) : p.image} alt={p.title} className={p.logoCard ? (p.slug === 'atendi-ai' ? 'related-card-img--logo related-card-img--logo-atendi' : 'related-card-img--logo') : ''} />
+                  <img src={p.logoCard ? (p.slug === 'atendi-ai' ? atendiStackedLogo : p.slug === 'game-line' ? gameLineLogo : intakeLawyerLogo) : p.image} alt={p.title} className={p.logoCard ? (p.slug === 'atendi-ai' ? 'related-card-img--logo related-card-img--logo-atendi' : 'related-card-img--logo') : ''} />
                   <h3>{p.title}</h3>
                   <p>{p.shortDescription}</p>
                 </Link>
@@ -863,7 +876,7 @@ function ItsGonnaBeOkayDetail({ project }) {
               .slice(0, 3)
               .map(p => (
                 <Link key={p.id} to={`/projects/${p.slug}`} className="related-card">
-                  <img src={p.logoCard ? (p.slug === 'atendi-ai' ? atendiStackedLogo : intakeLawyerLogo) : p.image} alt={p.title} className={p.logoCard ? (p.slug === 'atendi-ai' ? 'related-card-img--logo related-card-img--logo-atendi' : 'related-card-img--logo') : ''} />
+                  <img src={p.logoCard ? (p.slug === 'atendi-ai' ? atendiStackedLogo : p.slug === 'game-line' ? gameLineLogo : intakeLawyerLogo) : p.image} alt={p.title} className={p.logoCard ? (p.slug === 'atendi-ai' ? 'related-card-img--logo related-card-img--logo-atendi' : 'related-card-img--logo') : ''} />
                   <h3>{p.title}</h3>
                   <p>{p.shortDescription}</p>
                 </Link>
@@ -985,11 +998,261 @@ function HuskythonDetail({ project }) {
           <div className="related-grid">
             {projectsData.filter(p => p.id !== project.id).slice(0, 3).map(p => (
               <Link key={p.id} to={`/projects/${p.slug}`} className="related-card">
-                <img src={p.logoCard ? (p.slug === 'atendi-ai' ? atendiStackedLogo : intakeLawyerLogo) : p.image} alt={p.title} className={p.logoCard ? (p.slug === 'atendi-ai' ? 'related-card-img--logo related-card-img--logo-atendi' : 'related-card-img--logo') : ''} />
+                <img src={p.logoCard ? (p.slug === 'atendi-ai' ? atendiStackedLogo : p.slug === 'game-line' ? gameLineLogo : intakeLawyerLogo) : p.image} alt={p.title} className={p.logoCard ? (p.slug === 'atendi-ai' ? 'related-card-img--logo related-card-img--logo-atendi' : 'related-card-img--logo') : ''} />
                 <h3>{p.title}</h3>
                 <p>{p.shortDescription}</p>
               </Link>
             ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+const GL_GAMES = [
+  {
+    img: gameLineCardSecretAgent,
+    alt: 'Secret Agent',
+    title: 'Secret Agent',
+    players: '3–12 players · Multi-device',
+    description: 'Everyone is given a location and a role — except the secret agent, who only knows they\'re the spy. Players take turns asking each other questions to expose the spy without giving away the location themselves.',
+    howToPlay: 'One player is secretly assigned the spy role with no location. All others receive the same location and a unique role. Take turns asking any player a question. When you think you know who the spy is, call a vote — if everyone agrees, they\'re out. But if the spy correctly guesses the location before being caught, they steal the win.',
+  },
+  {
+    img: gameLineCardFlipUp,
+    alt: 'Flip Up',
+    title: 'Flip Up',
+    players: '2+ players · Single device',
+    description: 'Hold the phone to your forehead while your friends describe the word on screen. Tilt the phone down to mark it correct, tilt up to skip.',
+    howToPlay: 'One player holds the phone facing outward at forehead level. Friends give clues without saying the word. Tilt down for a correct guess, tilt up to pass. When time runs out, the results screen shows every card and whether it was got or skipped.',
+  },
+  {
+    img: gameLineCardGaslight,
+    alt: 'Gaslight or Burn',
+    title: 'Gaslight or Burn',
+    players: '3+ players · Multi-device',
+    description: 'A bluffing game where players make bold claims and others decide whether to believe them or call their bluff. Convince the room — or get burned.',
+    howToPlay: 'Players take turns making statements about a hidden prompt. Everyone else decides — believe them or call them out. Score points for deceiving others or catching a lie. The player with the most points when the deck runs out wins.',
+  },
+  {
+    img: gameLineCardTruthOrDare,
+    alt: 'Truth or Dare',
+    title: 'Truth or Dare',
+    players: '2+ players · Single device',
+    description: 'The classic party game. Pick truth and answer honestly, or pick dare and face whatever your friends throw at you.',
+    howToPlay: 'On your turn, choose truth or dare. Truth means you answer the question on screen completely honestly. Dare means you complete the challenge — no backing out. Pass the phone around the group and let the chaos unfold.',
+  },
+]
+
+function GameLineDetail({ project }) {
+  const [openGame, setOpenGame] = useState(null)
+
+  return (
+    <div className="il-detail">
+      <div className="il-container">
+        <Link to="/projects" className="back-link">← Back to Work</Link>
+
+        <div className="il-header">
+          <div>
+            <img src={gameLineLogo} alt="Game Line" className="il-brand-logo" />
+            <h1 className="il-title">{project.title}</h1>
+          </div>
+          <div className="il-meta-table">
+            <div className="il-meta-row"><span>Type</span><span>Web App</span></div>
+            <div className="il-meta-row"><span>Role</span><span>Designer & Developer</span></div>
+            <div className="il-meta-row"><span>Stack</span><span>React 18 · Vite · WebRTC</span></div>
+            <div className="il-meta-row"><span>Year</span><span>2025</span></div>
+            <div className="il-meta-row">
+              <span>Live</span>
+              <span>
+                <a href="https://game-line-rouge.vercel.app" target="_blank" rel="noopener noreferrer">
+                  game-line-rouge.vercel.app
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div className="gl-hero">
+          <div className="gl-hero-text">
+            <span className="section-label">Free Party Game Platform</span>
+            <h2 className="gl-hero-headline">Games for any group,<br />any night.</h2>
+            <p className="gl-hero-body">I built Game Line because the same problem kept coming up at hangouts — someone wants to play a group game, but you need the board game, everyone has to download an app, or there's a subscription.</p>
+            <p className="gl-hero-body">Open a browser on any phone and start playing in seconds. No app store. No account. No cost.</p>
+            <div className="gl-hero-tags">
+              <span className="gl-hero-tag">No install</span>
+              <span className="gl-hero-tag">No login</span>
+              <span className="gl-hero-tag">Free forever</span>
+              <span className="gl-hero-tag">Up to 12 players</span>
+            </div>
+            <a href="https://game-line-rouge.vercel.app" target="_blank" rel="noopener noreferrer" className="gl-hero-link">
+              Play now →
+            </a>
+          </div>
+          <div className="gl-hero-phones">
+            <div className="gl-phone-frame">
+              <div className="gl-phone-screen">
+                <div className="gl-phone-island" />
+                <img src={gameLineScreenshot} alt="Game Line on mobile" className="gl-phone-screenshot" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="gl-cards-section">
+          <span className="section-label">Games</span>
+          <div className="gl-cards-grid">
+            {GL_GAMES.map((game) => {
+              const isOpen = openGame === game.title
+              return (
+                <div
+                  key={game.title}
+                  className="gl-card-wrap"
+                  onClick={() => setOpenGame(isOpen ? null : game.title)}
+                >
+                  <div className={`gl-card-inner${isOpen ? ' gl-card-inner--flipped' : ''}`}>
+                    <div className="gl-card-front">
+                      <img src={game.img} alt={game.alt} />
+                    </div>
+                    <div className="gl-card-back">
+                      <div className="gl-card-back-header">
+                        <span className="gl-card-back-title">{game.title}</span>
+                        <span className="gl-card-back-players">{game.players}</span>
+                      </div>
+                      <p className="gl-card-back-desc">{game.description}</p>
+                      <div>
+                        <span className="gl-card-back-label">How to play</span>
+                        <p className="gl-card-back-desc">{game.howToPlay}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+
+        <div className="gl-game-showcase">
+          <div className="gl-game-showcase-text">
+            <span className="section-label">In Play</span>
+            <h3 className="gl-game-showcase-title">Secret Agent</h3>
+            <p className="gl-game-showcase-body">One player is secretly the spy — no location, no role, just suspicion. Everyone else shares the same secret location and must ask questions carefully enough to expose the spy without accidentally tipping them off themselves.</p>
+            <p className="gl-game-showcase-body">Each player gets their assignment privately on their own device. The spy has to blend in by asking plausible questions and reading the room — while everyone else races to identify them before the clock runs out.</p>
+            <div className="gl-game-showcase-stats">
+              <div className="gl-game-showcase-stat">
+                <span className="gl-game-showcase-stat-value">3–12</span>
+                <span className="gl-game-showcase-stat-label">Players</span>
+              </div>
+              <div className="gl-game-showcase-stat">
+                <span className="gl-game-showcase-stat-value">8 min</span>
+                <span className="gl-game-showcase-stat-label">Round length</span>
+              </div>
+              <div className="gl-game-showcase-stat">
+                <span className="gl-game-showcase-stat-value">20</span>
+                <span className="gl-game-showcase-stat-label">Locations</span>
+              </div>
+            </div>
+          </div>
+          <div className="gl-game-showcase-phone">
+            <div className="gl-phone-frame gl-phone-frame--tilted">
+              <div className="gl-phone-screen">
+                <div className="gl-phone-island" />
+                <img src={gameLineSecretAgentScreenshot} alt="Secret Agent game screen" className="gl-phone-screenshot" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="il-split">
+          <div className="il-split-lede">
+            <p>A single state machine drives every screen — lobby, game select, and every game phase.</p>
+          </div>
+          <div className="il-split-body">
+            <p>All global game state lives in a single GameContext backed by React Context + useReducer — a lightweight Redux without the boilerplate. Every screen is a named state value; a single dispatch moves the whole app between them. PeerJS 1.5.2 handles WebRTC signaling for direct peer-to-peer connections — one player's device acts as host, all others connect directly, with messages broadcast in real time and no intermediary server.</p>
+            <p>The stateRef pattern was a key architectural decision. PeerJS callbacks and timer intervals are registered once and don't re-register — they'd read stale state through closures. A stateRef stays synced to the latest state on every render, so callback logic always sees current data. Auto-trigger useEffects watch specific state slices and fire host-only actions automatically: when all commence-votes are in, the vote phase starts on its own without any inline condition checks or race conditions.</p>
+          </div>
+        </div>
+
+        <div className="il-split">
+          <div className="il-split-body">
+            <p>The host device is the source of truth: it generates assignments, runs the timer, and broadcasts phase transitions. Guests send intent and the host resolves and rebroadcasts state. When a guest's screen sleeps mid-game, two layers kick in: Screen Wake Lock API prevents sleep when a room is active and re-acquires on visibilitychange, and an auto-reconnect loop retries up to 20 times at 3-second intervals. The host holds a 30-second grace period before removing a disconnected player so a quick reconnect doesn't disrupt the game.</p>
+            <p>Deduplication guards against PeerJS echoing send() calls back to the host's own onMessage handler — the reducer checks for existing player IDs before applying vote or commence-vote updates. iOS DeviceOrientation permission requires a user gesture on Safari; Flip Up requests it inline when the player taps "Play Deck," with a graceful fallback on Android and desktop.</p>
+          </div>
+          <div className="il-split-lede">
+            <p>Serverless real-time multiplayer across 12 phones — with no backend and no dropped sessions.</p>
+          </div>
+        </div>
+
+        <div className="il-section">
+          <span className="section-label" style={{ textAlign: 'center' }}>Stack</span>
+          <div className="il-stack-groups">
+            {[
+              {
+                label: 'Frontend',
+                items: [
+                  { name: 'React 18', icon: 'https://cdn.simpleicons.org/react' },
+                  { name: 'Vite 5',   icon: viteIcon },
+                ],
+              },
+              {
+                label: 'Networking',
+                items: [
+                  { name: 'PeerJS', icon: peerJsIcon },
+                  { name: 'WebRTC', icon: webRtcIcon },
+                ],
+              },
+              {
+                label: 'Browser APIs',
+                items: [
+                  { name: 'DeviceOrientation', icon: deviceOrientationIcon },
+                  { name: 'Web Audio',         icon: webAudioIcon },
+                  { name: 'Screen Wake Lock',  icon: screenWakeLockIcon },
+                ],
+              },
+              {
+                label: 'Infrastructure',
+                items: [
+                  { name: 'Vercel', icon: 'https://cdn.simpleicons.org/vercel/000000' },
+                ],
+              },
+            ].map(({ label, items }) => (
+              <div key={label} className="il-stack-group">
+                <span className="il-stack-group-label">{label}</span>
+                <div className="il-stack-icons">
+                  {items.map(({ name, icon }) => (
+                    <StackIcon key={name} name={name} icon={icon} />
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="il-cta">
+          <a
+            href="https://game-line-rouge.vercel.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="cta-button live-button"
+          >
+            Play Game Line →
+          </a>
+        </div>
+
+        <div className="related-projects">
+          <h2>More Work</h2>
+          <div className="related-grid">
+            {projectsData
+              .filter(p => p.id !== project.id)
+              .slice(0, 3)
+              .map(p => (
+                <Link key={p.id} to={`/projects/${p.slug}`} className="related-card">
+                  <img src={p.logoCard ? (p.slug === 'atendi-ai' ? atendiStackedLogo : p.slug === 'game-line' ? gameLineLogo : intakeLawyerLogo) : p.image} alt={p.title} className={p.logoCard ? (p.slug === 'atendi-ai' ? 'related-card-img--logo related-card-img--logo-atendi' : 'related-card-img--logo') : ''} />
+                  <h3>{p.title}</h3>
+                  <p>{p.shortDescription}</p>
+                </Link>
+              ))}
           </div>
         </div>
       </div>
@@ -1019,5 +1282,6 @@ export default function ProjectDetail() {
   if (project.slug === 'its-gonna-be-okay') return <ItsGonnaBeOkayDetail project={project} />
   if (project.slug === 'intake-lawyer') return <IntakeLawyerDetail project={project} />
   if (project.slug === 'atendi-ai') return <AtendaiDetail project={project} />
+  if (project.slug === 'game-line') return <GameLineDetail project={project} />
   return <WebDetail project={project} />
 }
