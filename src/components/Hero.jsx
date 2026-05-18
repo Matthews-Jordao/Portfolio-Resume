@@ -15,12 +15,13 @@ export default function Hero() {
   const [currentTitleIndex, setCurrentTitleIndex] = useState(0)
   const [displayText, setDisplayText] = useState('')
   const [isDeleting, setIsDeleting] = useState(false)
+  const [showComingSoon, setShowComingSoon] = useState(false)
 
   useEffect(() => {
     const currentTitle = titles[currentTitleIndex]
     
-    const typewriterSpeed = isDeleting ? 100 : 150
-    const delay = isDeleting ? 0 : displayText === currentTitle ? 2000 : 0
+    const typewriterSpeed = isDeleting ? 50 : 80
+    const delay = isDeleting ? 0 : displayText === currentTitle ? 1200 : 0
 
     const timer = setTimeout(() => {
       if (!isDeleting && displayText !== currentTitle) {
@@ -75,7 +76,7 @@ export default function Hero() {
                 <path d="M8.293 1.707a1 1 0 0 1 1.414 0L15 7l-5.293 5.293a1 1 0 0 1-1.414-1.414L11.586 8H2a1 1 0 0 1 0-2h9.586L8.293 3.293a1 1 0 0 1 0-1.414z" fill="currentColor"/>
               </svg>
             </Link>
-            <button className="btn-play" aria-label="Play intro video">
+            <button className="btn-play" aria-label="Play intro video" onClick={() => setShowComingSoon(true)}>
               <div className="play-icon-circle">
                 <svg className="play-icon" viewBox="0 0 24 24">
                   <path d="M8 5v14l11-7z" fill="currentColor"/>
@@ -94,6 +95,26 @@ export default function Hero() {
           <img src={profileImg} alt="Matthews Jordao" className="profile-image" />
         </div>
       </div>
+
+      {showComingSoon && (
+        <div className="coming-soon-overlay" onClick={() => setShowComingSoon(false)}>
+          <div className="coming-soon-modal" onClick={e => e.stopPropagation()}>
+            <button className="coming-soon-close" onClick={() => setShowComingSoon(false)} aria-label="Close">
+              <svg viewBox="0 0 24 24" width="18" height="18">
+                <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+              </svg>
+            </button>
+            <div className="coming-soon-icon">
+              <svg viewBox="0 0 24 24" width="28" height="28">
+                <path d="M15 10l4.553-2.277A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </div>
+            <p className="coming-soon-label">Coming Soon</p>
+            <h2 className="coming-soon-title">Intro video in production</h2>
+            <p className="coming-soon-sub">Check back soon — it's being edited right now.</p>
+          </div>
+        </div>
+      )}
     </section>
   )
 }

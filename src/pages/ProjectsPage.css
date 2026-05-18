@@ -12,7 +12,8 @@
 }
 
 .projects-wrapper {
-  width: var(--content-width, 860px);
+  width: 100%;
+  max-width: var(--content-width, 860px);
   margin: 0 auto;
 }
 
@@ -222,14 +223,16 @@
   transition: opacity 0.25s ease, visibility 0.25s ease;
 }
 
-.project-image-container:hover .project-overlay {
-  opacity: 1;
-  visibility: visible;
-}
+@media (hover: hover) and (pointer: fine) {
+  .project-image-container:hover .project-overlay {
+    opacity: 1;
+    visibility: visible;
+  }
 
-.project-image-container:hover .project-image {
-  filter: brightness(0.35);
-  transform: scale(1.03);
+  .project-image-container:hover .project-image {
+    filter: brightness(0.35);
+    transform: scale(1.03);
+  }
 }
 
 .overlay-btn {
@@ -247,9 +250,11 @@
   opacity: 0;
 }
 
-.project-image-container:hover .overlay-btn {
-  transform: translateY(0);
-  opacity: 1;
+@media (hover: hover) and (pointer: fine) {
+  .project-image-container:hover .overlay-btn {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .github-btn {
@@ -357,8 +362,10 @@
   padding-left: 4px;
 }
 
-.project-image-container:hover .play-btn-circle {
-  opacity: 1;
+@media (hover: hover) and (pointer: fine) {
+  .project-image-container:hover .play-btn-circle {
+    opacity: 1;
+  }
 }
 
 .video-type-label {
@@ -427,8 +434,10 @@
   pointer-events: none;
 }
 
-.project-image-container:hover .project-image--gif {
-  opacity: 1;
+@media (hover: hover) and (pointer: fine) {
+  .project-image-container:hover .project-image--gif {
+    opacity: 1;
+  }
 }
 
 /* ── Responsive ──────────────────────────────── */
