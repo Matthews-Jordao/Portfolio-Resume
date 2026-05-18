@@ -170,6 +170,7 @@
 .project-card {
   display: flex;
   flex-direction: column;
+  height: 380px;
   border: 1px solid var(--separator);
   border-radius: 8px;
   overflow: hidden;
@@ -331,11 +332,20 @@
   line-height: 1.65;
   margin: 0;
   flex-grow: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 /* ── Video Card ──────────────────────────────── */
 
+.project-card--video {
+  height: 380px;
+}
+
 .project-card--video .project-image-container--video {
+  flex-shrink: 0;
   height: auto;
   aspect-ratio: 16 / 9;
 }
@@ -464,6 +474,15 @@
   .projects-grid {
     grid-template-columns: 1fr;
     gap: 24px;
+  }
+
+  .project-card,
+  .project-card--video {
+    height: 340px;
+  }
+
+  .project-image-container {
+    height: 180px;
   }
 }
 
